@@ -46,7 +46,7 @@
     <!--<script type="text/javascript">
       if (document.images) {
         var avatar = new Image();
-        avatar.src = '/imgs/http:/www.chelp.top/jianli/gyx/assets/images/gyx.jpg'
+        avatar.src = '/imgs/gyx.jpg'
         var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
         var previewsPreLoad = []
         for(var i = 0; i < length; i++) {
@@ -99,9 +99,14 @@
             </button>
             <a href="http://1530624156.github.io">
                 
-                <!-- 这里background直接使用logo_image(url) -->
+                <!-- 这里background使用imgs/${logo_image}(路径文件名) -->
                 <style>
-
+                    #gal-header .navbar-brand {
+                        width: 200px;
+                        height: 50px;
+                        display: block;
+                        background: url('/imgs/gyx.jpg%E3%80%81') no-repeat;
+                    }
                 </style>
                     
                 <div class="navbar-brand"></div>
@@ -244,7 +249,7 @@
             <i class="fa fa-quote-right"></i>
         </div>
         <div class="author-panel text-center">
-            <img src="http://www.chelp.top/jianli/gyx/assets/images/gyx.jpg" width="140" height="140"
+            <img src="/imgs/gyx.jpg" width="140" height="140"
                  alt="个人头像" class="author-image">
             <p class="author-description"></p>
         </div>
