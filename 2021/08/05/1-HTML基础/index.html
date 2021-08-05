@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="小轩同学">
+    
+    
+    
+    
+    
+    
+    <title>1.HTML基础 | Hexo</title>
+    <link href="http://1530624156.github.io" rel="prefetch" />
+
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/js/jquery.min.js"></script>
+
+    
+<script src="/js/bootstrap.min.js"></script>
+
+    
+<script src="/js/aos.js"></script>
+
+    
+<script src="/js/highslide/highslide-full.min.js"></script>
+
+    
+<link rel="stylesheet" href="/js/highslide/highslide.css">
+
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/gyx.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="http://1530624156.github.io" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://1530624156.github.io">
+                
+                <!-- 这里background使用imgs/${logo_image}(路径文件名) -->
+                <style>
+                    #gal-header .navbar-brand {
+                        width: 200px;
+                        height: 50px;
+                        display: block;
+                        background: url('/imgs/gyx.jpg') no-repeat;
+                    }
+                </style>
+                    
+                <div class="navbar-brand"></div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/categories/%E6%96%87%E7%AB%A0/">文章</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E5%B8%B8%E7%94%A8%E6%98%93%E5%BF%98%E5%86%85%E5%AE%B9/">常用易忘内容</a>
+                        </li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                
+                <li class="dropdown">
+                    <!-- TODO 添加hover dropdown效果 -->
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li>
+                            <a href="/tags/%E5%8D%9A%E5%AE%A2%E8%87%AA%E8%BF%B0/">博客自述</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%9D%A5%E6%BA%90/">博客来源</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tags/CSS/">CSS</a>
+                        </li>
+                        
+                        
+                        <li>
+                            <a href="/tags">...</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a target="_blank" rel="noopener" href="http://www.chelp.top/jianli/gyx/">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://1530624156.github.io">Hexo</a>
+        >
+        <span>1.HTML基础</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2021/08/05/1-HTML%E5%9F%BA%E7%A1%80/">1.HTML基础</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/HTML/">HTML</a>
+                
+            </span>
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2021-08-05
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2021/08/05/1-HTML%E5%9F%BA%E7%A1%80/">1.HTML基础</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2021-08-05
+            </p>
+            <p>
+                
+                <i class="fa fa-tags"></i>
+                
+                <a href="/tags/HTML/">HTML</a>
+                
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <h2 id="1-HTTP和WEB工作原理"><a href="#1-HTTP和WEB工作原理" class="headerlink" title="1.HTTP和WEB工作原理"></a>1.HTTP和WEB工作原理</h2><p> 超文本传输协议（HTTP，HyperText Transfer Protocol）是互联网上应用最为广泛的一种网络协议。所有的 WWW 文件都必须遵守这个标准。</p>
+<p> WEB 本意是蜘蛛网和网的意思。现广泛译作网络、互联网等技术领域。表现为三种形式，即超文本（hypertext）、超媒体（hypermedia）、超文本传输协议（HTTP）等。</p>
+<p> 当你想进入一个网页，或者其他网络资源的时候，通常你要首先在你的浏览器上键入你想访问网页的统一资源定位符（Uniform Resource Locator)，或者通过超链接方式链接到那个网页或网络资源。这之后的工作首先是 URL 的服务器名部分，被名为域名系统的分布于全球的因特网数据库解析，并根据解析结果决定进入哪一个 IP 地址。</p>
+<p> 接下来的步骤是给所要访问的网页，向在那个IP地址工作的服务器发送一个 HTTP 请求。在通常情况下，HTML 文本、图片和构成该网页的一切其他文件很快会被逐一请求并发送回用户。</p>
+<p> 网络浏览器接下来的工作是把 HTML、CSS 和其他接受到的文件所描述的内容，加上图像、链接和其他必须的资源，显示给用户。这些就构成了你所看到的“网页”。</p>
+<p> 大多数的网页自身包含有超链接指向其他相关网页，可能还有下载、源文献、定义和其他网络资源。像这样通过超链接，把有用的相关资源组织在一起的集合，就形成了一个所谓的信息的“网”。这个网在因特网上被方便使用，就构成了最早在 1990 年代初蒂姆·伯纳斯-李所说的万维网。</p>
+<h2 id="2-什么是HTML"><a href="#2-什么是HTML" class="headerlink" title="2.什么是HTML"></a>2.什么是HTML</h2><p> HTML 就是万维网中的超文本，HTML 也叫做超文本标记语言。“超文本”就是表示页面内可以包含非文字元素，如：图片、链接、音乐等等。在Web服务中，信息一般是使用 HTML 格式以超文本和超媒体方式传送的，所使用的 Internet 协议是 HTTP 协议。</p>
+<p>HTML 是用来描述网页的一种语言。</p>
+<ul>
+<li>HTML 指的是超文本标记语言 (Hyper Text Markup Language)</li>
+<li>HTML 是一种标记语言 (markup language)</li>
+<li>标记语言是一套标记标签 (markup tag)</li>
+<li>HTML 使用标记标签来描述网页</li>
+</ul>
+<p> 它是一种建立网页文件的语言，通过标记式的指令（Tag），将影像、声音、图片、文字等链接显示出来。这种标记性语言是因特网上网页的主要语言。</p>
+<p> HTML 网页文件可以使用记事本、写字板、HBuilder、Sublime 等编辑工具来编写，以 <code>.htm</code> 或<code>.html </code>为文件后缀名保存。将 HTML 网页文件用浏览器打开显示，若测试没有问题则可以放到服务器（Server）上，对外发布信息。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-HTML基础语法"><a href="#3-HTML基础语法" class="headerlink" title="3. HTML基础语法"></a>3. HTML基础语法</h2><h3 id="3-1-lt-DOCTYPE-html-gt"><a href="#3-1-lt-DOCTYPE-html-gt" class="headerlink" title="3.1. &lt;!DOCTYPE html&gt;"></a>3.1. <code>&lt;!DOCTYPE html&gt;</code></h3><p> 格式一： <code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</code></p>
+<p> 格式二： <code>&lt;!DOCTYPE html&gt;</code> 推荐的方式 Document Type HyperText Mark-up Language，文档中超文本标记语言的类型，可告知浏览器怎么解析该文档。</p>
+<p> 由于使用的场景或者版本的更替间，HTML 使用的标准不同，所以需要浏览器按照不同的标准来解析 HTML 文本内容，这就需要告知浏览器我当前的 HTML 页面是按照那种方式进行编写的。没有该声明，将是你 HTML 噩梦的开始。这行代码必须写且务必在文档首行。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;!DOCTYPE html&gt;&lt;!-- 必须写在HTML文件首行 --&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-lt-html-gt-lt-html-gt"><a href="#3-2-lt-html-gt-lt-html-gt" class="headerlink" title="3.2. &lt;html&gt;&lt;/html&gt;"></a>3.2. <code>&lt;html&gt;&lt;/html&gt;</code></h3><p><code>&lt;html&gt;</code> 标签用于 HTML 文档的最开始，用来标识 HTML 文档的开始。而 <code>&lt;/html&gt;</code> 标志放在HTML 文档的结束，用来标识 HTML 文档的结束，两个标志必须一块使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;!DOCTYPE html&gt;&lt;!-- 必须写在HTML文件首行 --&gt;</span><br><span class="line">&lt;html&gt;&lt;!-- HTML文档的开始 --&gt;</span><br><span class="line">&lt;/html&gt;&lt;!-- HTML文档的结束 --&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-lt-head-gt-lt-head-gt"><a href="#3-3-lt-head-gt-lt-head-gt" class="headerlink" title="3.3. &lt;head&gt;&lt;/head&gt;"></a>3.3. <code>&lt;head&gt;&lt;/head&gt;</code></h3><p> <code>&lt;head&gt;</code> 和 <code>&lt;/head&gt;</code> 构成 HTML 文档的开头部分。 <code>&lt;head&gt;</code> 和 <code>&lt;/head&gt;</code> 标签之间的内容是不会在浏览器的框内显示出来的，两个标志必须一块使用。</p>
+<p> 在此标志对之间可以使用 <code>&lt;title&gt;&lt;/title&gt;</code> 、 <code>&lt;meta&gt;</code> 、 <code>&lt;link&gt;</code> 、 <code>&lt;script&gt;&lt;/script&gt;</code>等标签。</p>
+<p> <code>&lt;meta&gt;</code> ：用来提供关于文档的信息，起始属性为： <code>charset=&quot;utf8&quot;</code> 。表示告诉浏览器页面采用什么编码解析文档，一般来说我们就用 utf8。当然，文件保存的时候也是 utf8，而浏览器也设置 utf8即可正确显示。</p>
+<p> <code>&lt;link&gt;</code> ：用来引入 CSS 文件。</p>
+<p> <code>&lt;style&gt;&lt;/style&gt;</code> ：编写 CSS 代码。</p>
+<p> <code>&lt;script&gt;&lt;/script&gt;</code> ：用来引入 JS 文件或编写 JS 代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;!DOCTYPE html&gt;&lt;!-- 必须写在HTML文件首行 --&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;!-- HTML文档的开始 --&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;!-- HTML文档的开头部分 --&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;&lt;!-- 文档属性 --&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;&lt;!-- 文档标题 --&gt;</span><br><span class="line">		&lt;link href=&quot;css文件的路径&quot; /&gt;&lt;!-- 引入css文件 --&gt;</span><br><span class="line">		&lt;style&gt;&lt;/style&gt;&lt;!-- 编写css代码 --&gt;</span><br><span class="line">		&lt;script src=&quot;js文件的路径&quot;&gt;&lt;/script&gt;&lt;!-- 引入js文件或者编写js代码 --&gt;</span><br><span class="line">	&lt;/head&gt;&lt;!-- HTML文档的开头结束 --&gt;</span><br><span class="line">&lt;/html&gt;&lt;!-- HTML文档的结束 --&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-lt-title-gt-lt-title-gt"><a href="#3-4-lt-title-gt-lt-title-gt" class="headerlink" title="3.4. &lt;title&gt;&lt;/title&gt;"></a>3.4. <code>&lt;title&gt;&lt;/title&gt;</code></h3><p> <code>&lt;title&gt;</code> 定义文档的标题。浏览器会以特殊的方式来使用标题，并且通常把它放置在浏览器窗口<br>的标题栏或状态栏上。同样，当把文档加入用户的链接列表或者收藏夹或书签列表时，标题将成为该文<br>档链接的默认名称。</p>
+<p> 注意： <code>&lt;title&gt;</code> 标签位于 <code>&lt;head&gt;</code> 标签内，是 <code>&lt;head&gt;</code> 标签中唯一要求包含的东西。</p>
+<h3 id="3-5-lt-meta-gt-lt-meta-gt"><a href="#3-5-lt-meta-gt-lt-meta-gt" class="headerlink" title="3.5. &lt;meta&gt;&lt;/meta&gt;"></a>3.5. <code>&lt;meta&gt;&lt;/meta&gt;</code></h3><p> <code>&lt;meta/&gt;</code>用来提供关于文档的信息。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;!DOCTYPE html&gt;&lt;!-- 必须写在HTML文件首行 --&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;!-- HTML文档的开始 --&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;!-- HTML文档的开头部分 --&gt;</span><br><span class="line">		&lt;!-- SEO搜索引擎优化策略 --&gt;</span><br><span class="line">		&lt;!-- 网站标题 --&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		&lt;!-- 详细描述 --&gt;</span><br><span class="line">		&lt;meta name=&quot;description&quot; content=&quot;这里写网站内容描述&quot; /&gt;</span><br><span class="line">		&lt;!-- 关键词 --&gt;</span><br><span class="line">		&lt;meta name=&quot;keywords&quot; content=&quot;这里写关键词&quot; /&gt;</span><br><span class="line">	&lt;/head&gt;&lt;!-- HTML文档的开头结束 --&gt;</span><br><span class="line">&lt;/html&gt;&lt;!-- HTML文档的结束 --&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 以上三部分是SEO搜索引擎优化的主要部分。</p>
+<h3 id="3-6-lt-body-gt-lt-body-gt"><a href="#3-6-lt-body-gt-lt-body-gt" class="headerlink" title="3.6. &lt;body&gt;&lt;/body&gt;"></a>3.6. <code>&lt;body&gt;&lt;/body&gt;</code></h3><p> 一般情况下浏览器上显示的内容的都放在body中，不排除其他标签可以不用body，比如frameset框架集标签。<br>​ <code>&lt;body&gt;</code> 和 <code>&lt;/body&gt;</code> 是HTML文档的主体部分，在此标志对之间可包含<code> &lt;p&gt;&lt;/p&gt;</code> 、 <code>&lt;h1&gt;&lt;/h1&gt;</code> 、 <code>&lt;br&gt;</code>、 <code>&lt;hr&gt;</code> 等众多的标志。它们所定义的文本、图像等将会在浏览器的框内显示出来。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;!DOCTYPE html&gt;&lt;!-- 必须写在HTML文件首行 --&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;!-- HTML文档的开始 --&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;!-- HTML文档的开头部分 --&gt;</span><br><span class="line">		&lt;!-- SEO搜索引擎优化策略 --&gt;</span><br><span class="line">		&lt;!-- 网站标题 --&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		&lt;!-- 详细描述 --&gt;</span><br><span class="line">		&lt;meta name=&quot;description&quot; content=&quot;这里写网站内容描述&quot; /&gt;</span><br><span class="line">		&lt;!-- 关键词 --&gt;</span><br><span class="line">		&lt;meta name=&quot;keywords&quot; content=&quot;这里写关键词&quot; /&gt;</span><br><span class="line">	&lt;/head&gt;&lt;!-- HTML文档的开头结束 --&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;!-- HTML文档的主体部分开始 --&gt;</span><br><span class="line">	&lt;/body&gt;&lt;!-- HTML文档的主体部分结束 --&gt;</span><br><span class="line">&lt;/html&gt;&lt;!-- HTML文档的结束 --&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-HTML常用标签和属性"><a href="#4-HTML常用标签和属性" class="headerlink" title="4.HTML常用标签和属性"></a>4.HTML常用标签和属性</h2><p> HTML 页面是由标签组成，不同的标签浏览器对其进行不同样式和内容的渲染 ，我们需要记忆常用<br>的标签即可。大致可分为如下几类：头标签、标题、水平线、段落、换行、图片、表格、超链接、列<br>表、表单、下拉列表、div 和 span、格式化文字的。</p>
+<p> HTML 标签可以拥有属性。属性提供了有关 HTML 元素的更多的信息。</p>
+<p> 属性总是以名称/值对的形式出现，比如：name=”value”。</p>
+<p> 属性总是在 HTML 元素的开始标签中规定。</p>
+<h3 id="4-1-HTML标题"><a href="#4-1-HTML标题" class="headerlink" title="4.1. HTML标题"></a>4.1. HTML标题</h3><p> HTML 标题（Heading）是通过 <code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code> 等标签进行定义的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;body&gt;</span><br><span class="line">    &lt;!-- HTML 标题（Heading）是通过 &lt;h1&gt; - &lt;h6&gt; 等标签进行定义的 --&gt;</span><br><span class="line">    &lt;h1&gt;This is a heading&lt;/h1&gt;</span><br><span class="line">    &lt;h2&gt;This is a heading&lt;/h2&gt;</span><br><span class="line">    &lt;h3&gt;This is a heading&lt;/h3&gt;</span><br><span class="line">    &lt;h4&gt;This is a heading&lt;/h4&gt;</span><br><span class="line">    &lt;h5&gt;This is a heading&lt;/h5&gt;</span><br><span class="line">    &lt;h6&gt;This is a heading&lt;/h6&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-HTML段落"><a href="#4-2-HTML段落" class="headerlink" title="4.2. HTML段落"></a>4.2. HTML段落</h3><p> HTML 段落是通过 <code>&lt;p&gt;</code> 标签进行定义的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;body&gt;</span><br><span class="line">    &lt;!-- HTML 段落是通过 &lt;p&gt; 标签进行定义的 --&gt;</span><br><span class="line">    &lt;p&gt;This is a paragraph.&lt;/p&gt;</span><br><span class="line">    &lt;p&gt;This is another paragraph.&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">COPY **注意**：浏览器会自动地在标题和段落的前后添加空行。  </span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-HTML水平线"><a href="#4-3-HTML水平线" class="headerlink" title="4.3. HTML水平线"></a>4.3. HTML水平线</h3><p> <code>&lt;hr /&gt;</code> 标签在 HTML 页面中创建水平线。 <code>&lt;hr /&gt;</code>元素可用于分隔内容。</p>
+<h3 id="4-4-HTML注释"><a href="#4-4-HTML注释" class="headerlink" title="4.4. HTML注释"></a>4.4. HTML注释</h3><p> 可以将注释插入 HTML 代码中，这样可以提高其可读性，使代码更易被人理解。浏览器会忽略注<br>释，也不会显示它们。 <code>&lt;!-- This is a comment --&gt;</code></p>
+<h3 id="4-5-HTML换行"><a href="#4-5-HTML换行" class="headerlink" title="4.5. HTML换行"></a>4.5. HTML换行</h3><p><code>&lt;br /&gt;</code> 元素是一个空的 HTML 元素。由于关闭标签没有任何意义，因此它没有结束标签。<br><code>&lt;br&gt;</code> 还是<code>&lt;br /&gt;</code> 您也许发现 <code>&lt;br&gt;</code> 与 <code>&lt;br /&gt;</code> 很相似。在 XHTML、XML 以及未来的 HTML<br>版本中，不允许使用没有结束标签（闭合标签）的 HTML 元素。<br>即使 <code>&lt;br /&gt;</code> 在所有浏览器中的显示都没有问题，使用 <code>&lt;br /&gt;</code> 也是更长远的保障。</p>
+<h3 id="4-6-HTML链接"><a href="#4-6-HTML链接" class="headerlink" title="4.6. HTML链接"></a>4.6. HTML链接</h3><p> HTML 链接是通过 <code>&lt;a&gt;</code> 标签进行定义的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;body&gt;</span><br><span class="line">    &lt;!-- HTML 链接是通过 &lt;a&gt; 标签进行定义的 --&gt;</span><br><span class="line">    &lt;a href=&quot;http://www.shsxt.com&quot;&gt;This is a link&lt;/a&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-7-HTML图像"><a href="#4-7-HTML图像" class="headerlink" title="4.7. HTML图像"></a>4.7. HTML图像</h3><p> HTML 图像是通过 <code>&lt;img /&gt;</code> 标签进行定义的。<br>​ 图像的名称和尺寸是以属性的形式提供的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;body&gt;</span><br><span class="line">    &lt;!-- HTML 图像是通过 &lt;img /&gt; 标签进行定义的 --&gt;</span><br><span class="line">    &lt;img src=&quot;img/1.jpg&quot; title=&quot;这是一个图片&quot; /&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-8-HTML格式化-了解"><a href="#4-8-HTML格式化-了解" class="headerlink" title="4.8. HTML格式化(了解)"></a>4.8. HTML格式化(了解)</h3><p> 文本格式化标签。</p>
+<table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt; b &gt;</td>
+<td>定义粗体文本</td>
+</tr>
+<tr>
+<td>&lt; big &gt;</td>
+<td>定义大号字</td>
+</tr>
+<tr>
+<td>&lt; em &gt;</td>
+<td>定义着重文字</td>
+</tr>
+<tr>
+<td>&lt; i &gt;</td>
+<td>定义斜体字</td>
+</tr>
+<tr>
+<td>&lt; small &gt;</td>
+<td>定义小号字</td>
+</tr>
+<tr>
+<td>&lt; strong &gt;</td>
+<td>定义加重语气</td>
+</tr>
+<tr>
+<td>&lt; sub &gt;</td>
+<td>定义下标字</td>
+</tr>
+<tr>
+<td>&lt; sup &gt;</td>
+<td>定义上标字</td>
+</tr>
+<tr>
+<td>&lt; ins &gt;</td>
+<td>定义插入字</td>
+</tr>
+<tr>
+<td>&lt; del &gt;</td>
+<td>定义删除字</td>
+</tr>
+</tbody></table>
+<h3 id="4-9-HTML元素"><a href="#4-9-HTML元素" class="headerlink" title="4.9. HTML元素"></a>4.9. HTML元素</h3><p> HTML 文档是由 HTML 元素定义的。<br>​ HTML 元素指的是从开始标签（start tag）到结束标签（end tag）的所有代码。</p>
+<table>
+<thead>
+<tr>
+<th>开始标签</th>
+<th>元素内容</th>
+<th>结束标签</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt; p &gt;</td>
+<td>This is a paragraph</td>
+<td>&lt; /p &gt;</td>
+</tr>
+<tr>
+<td>&lt; a href=”default.htm” &gt;</td>
+<td>This is a link</td>
+<td>&lt; /a &gt;</td>
+</tr>
+<tr>
+<td>&lt; br /&gt;</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p> <strong>注意</strong>：开始标签常被称为开放标签（opening tag），结束标签常称为闭合标签（closing tag）。</p>
+<h4 id="4-9-1-HTML语法"><a href="#4-9-1-HTML语法" class="headerlink" title="4.9.1. HTML语法"></a>4.9.1. HTML语法</h4><ul>
+<li>HTML 元素以开始标签起始</li>
+<li>HTML 元素以结束标签终止</li>
+<li>元素的内容是开始标签与结束标签之间的内容</li>
+<li>某些 HTML 元素具有空内容（empty content）</li>
+<li>空元素在开始标签中进行关闭（以开始标签的结束而结束）</li>
+<li>大多数 HTML 元素可拥有属性</li>
+</ul>
+<h4 id="4-9-2-嵌套的-HTML-元素"><a href="#4-9-2-嵌套的-HTML-元素" class="headerlink" title="4.9.2. 嵌套的 HTML 元素"></a>4.9.2. 嵌套的 HTML 元素</h4><p> 大多数 HTML 元素可以嵌套（可以包含其他 HTML 元素）。</p>
+<p> HTML 文档由嵌套的 HTML 元素构成。</p>
+<h4 id="4-9-3-HTML-文档实例"><a href="#4-9-3-HTML-文档实例" class="headerlink" title="4.9.3. HTML 文档实例"></a>4.9.3. HTML 文档实例</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">    	&lt;p&gt;This is my first paragraph.&lt;/p&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 上面的例子包含三个 HTML 元素。</p>
+<h4 id="4-9-4-HTML-实例解释"><a href="#4-9-4-HTML-实例解释" class="headerlink" title="4.9.4. HTML 实例解释"></a>4.9.4. HTML 实例解释</h4><h5 id="4-9-4-1-元素"><a href="#4-9-4-1-元素" class="headerlink" title="4.9.4.1.元素"></a>4.9.4.1.元素</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;p&gt;This is my first paragraph.&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 这个 <code>&lt;p&gt;</code> 元素定义了 HTML 文档中的一个段落。<br>​ 这个元素拥有一个开始标签 <code>&lt;p&gt;</code> ，以及一个结束标签 <code>&lt;/p&gt;</code> 。<br>​ 元素内容是：<code>This is my first paragraph</code> .</p>
+<h5 id="4-9-4-2-lt-body-gt-元素"><a href="#4-9-4-2-lt-body-gt-元素" class="headerlink" title="4.9.4.2.&lt;body&gt; 元素"></a>4.9.4.2.<code>&lt;body&gt;</code> 元素</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;body&gt;</span><br><span class="line">	&lt;p&gt;This is my first paragraph.&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<p> <code>&lt;body&gt;</code> 元素定义了 HTML 文档的主体。<br>​ 这个元素拥有一个开始标签 <code>&lt;body&gt;</code> ，以及一个结束标签 <code>&lt;/body&gt;</code> 。<br>​ 元素内容是另一个 HTML 元素（p 元素）。</p>
+<h5 id="4-9-4-3-lt-html-gt-元素"><a href="#4-9-4-3-lt-html-gt-元素" class="headerlink" title="4.9.4.3. &lt;html&gt; 元素"></a>4.9.4.3. <code>&lt;html&gt;</code> 元素</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;html&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">    	&lt;p&gt;This is my first paragraph.&lt;/p&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p> <code>&lt;html&gt;</code> 元素定义了整个 HTML 文档。<br>​ 这个元素拥有一个开始标签 <code>&lt;html&gt;</code> ，以及一个结束标签 <code>&lt;/html&gt;</code> 。<br>​ 元素内容是另一个 HTML 元素（body 元素）。不要忘记结束标签。<br>​ 即使您忘记了使用结束标签，大多数浏览器也会正确地显示 HTML。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;!-- 下面的写法不推荐 --&gt;</span><br><span class="line">&lt;p&gt;This is my first paragraph.</span><br><span class="line">&lt;p&gt;This is my first paragraph.</span><br></pre></td></tr></table></figure>
+
+<p> 上面的例子在大多数浏览器中都没问题，但不要依赖这种做法。忘记使用结束标签会产生不可预料<br>的结果或错误。<br>​ <strong>注意</strong>：未来的 HTML 版本不允许省略结束标签。</p>
+<h5 id="4-9-4-4-空的-HTML-元素"><a href="#4-9-4-4-空的-HTML-元素" class="headerlink" title="4.9.4.4. 空的 HTML 元素"></a>4.9.4.4. 空的 HTML 元素</h5><p> 没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。<br>​ <code>&lt;br&gt;</code> 就是没有关闭标签的空元素（ <code>&lt;br&gt;</code> 标签定义换行）。<br>​ 在未来版本的 HTML 中，所有元素都必须被关闭。<br>​ 在开始标签中添加斜杠，比如 <code>&lt;br /&gt;</code>，是关闭空元素的正确方法。<br>​ 即使 <code>&lt;br&gt;</code> 在所有浏览器中都是有效的，但使用 <code>&lt;br /&gt;</code> 其实是更长远的保障。</p>
+<h5 id="4-9-4-5-HTML提示：使用小写标签"><a href="#4-9-4-5-HTML提示：使用小写标签" class="headerlink" title="4.9.4.5. HTML提示：使用小写标签"></a>4.9.4.5. HTML提示：使用小写标签</h5><p> HTML 标签对大小写不敏感： <code>&lt;P&gt;</code> 等同于<code>&lt;p&gt;</code> 。<br>​ W3School 使用的是小写标签，因为万维网联盟（W3C）在 HTML 4 中推荐使用小写，在未来 HTML<br>版本中强制使用小写。</p>
+<h3 id="4-10-div和span"><a href="#4-10-div和span" class="headerlink" title="4.10. div和span"></a>4.10. div和span</h3><p> <code>&lt;div&gt;</code> 是一个块级元素，通常与css配合使用，用于布局。</p>
+<p> <code>&lt;div&gt;</code> 标签可以把文档分割为独立的、不同的部分。它可以用作严格的组织工具，并且不使用任何格式与其关联。</p>
+<p> <code>&lt;div&gt;</code> 是一个块级元素。这意味着它的内容自动地开始一个新行。实际上，换行是 <code>&lt;div&gt;</code> 固有的唯一格式表现。可以通过 <code>&lt;div&gt;</code> 的 class 或 id 应用额外的样式。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;HTML_div_span&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;!-- 构建一个div 设置边框黑色1px 宽度200px高度200px 字体居中 --&gt;</span><br><span class="line">		&lt;div style=&quot;border: 1px solid black;width: 200px;height: 200px;textalign: center;&quot;&gt;这是一个div&lt;/div&gt;</span><br><span class="line">		&lt;!-- 构建一个span 字体为红色 --&gt;</span><br><span class="line">		&lt;span style=&quot;color: red;&quot;&gt;这是一个span&lt;/span&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 标签的分类：HTML 中标签元素三种不同类型：块状元素，行内元素，行内块状元素。</p>
+<ul>
+<li><p>块级元素特点： 元素都从新的一行开始，并且其后的元素也另起一行；元素的高度、宽度、行高<br>以及顶和底边距都可设置；元素宽度在不设置的情况下，是它本身父容器的 100%（和父元素的宽<br>度一致），除非设定一个宽度。</p>
+</li>
+<li><p>行内元素特点 ：和其他元素都在一行上；元素的高度、宽度及顶部和底部边距不可设置；元素的<br>宽度就是它包含的文字或图片的宽度，不可改变。</p>
+</li>
+<li><p>行内块状元素的特点：和其他元素都在一行上；元素的高度、宽度、行高以及顶和底边距都可设<br>置。</p>
+<p>可通过浏览器查看是何种元素，后期也可以通过 CSS 进行修改。</p>
+</li>
+</ul>
+<h3 id="4-11-HTML表格"><a href="#4-11-HTML表格" class="headerlink" title="4.11. HTML表格"></a>4.11. HTML表格</h3><p> 表格由 <code>&lt;table&gt;</code> 标签来定义。每个表格均有若干行（由 <code>&lt;tr&gt;</code> 标签定义），每行被分割为若干<br>单元格（由 <code>&lt;td&gt;</code> 标签定义）。字母 td 指表格数据（table data），即数据单元格的内容。数据单<br>元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。</p>
+<p><strong>表格和边框属性</strong></p>
+<p> 如果不定义边框属性，表格将不显示边框。有时这很有用，但是大多数时候，我们希望显示边框。</p>
+<p><strong>表格的表头</strong></p>
+<p> 表格的表头使用 <code>&lt;th&gt;</code> 标签进行定义。<br>​ 大多数浏览器会把表头显示为粗体居中的文本。</p>
+<p><strong>表格中的空单元格</strong></p>
+<p> 在一些浏览器中，没有内容的表格单元显示得不太好。如果某个单元格是空的（没有内容），浏览<br>器可能无法显示出这个单元格的边框。</p>
+<p> 这个空的单元格的边框没有被显示出来。为了避免这种情况，在空单元格中添加一个空格占位符<code> </code>，就可以将边框显示出来。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;HTML表格&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;!-- 表格标签 属性border=&quot;1&quot; 添加表格边框粗细为1 --&gt;</span><br><span class="line">		&lt;table border=&quot;1&quot;&gt;</span><br><span class="line">			&lt;!-- 设置表格标题 --&gt;</span><br><span class="line">			&lt;caption&gt;</span><br><span class="line">				&lt;h3&gt;这是一个表格&lt;/h3&gt;</span><br><span class="line">			&lt;/caption&gt;</span><br><span class="line">			&lt;!-- 定义行 --&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;!-- th定义列 一般写在表格首行 内容会被加粗居中 --&gt;</span><br><span class="line">				&lt;th&gt;Heading&lt;/th&gt;</span><br><span class="line">				&lt;th&gt;Another Heading&lt;/th&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;!-- td定义列 --&gt;</span><br><span class="line">				&lt;td&gt;row 1, cell 1&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;row 1, cell 2&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;&amp;nbsp;&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;row 2, cell 2&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">		&lt;/table&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-12-HTML列表"><a href="#4-12-HTML列表" class="headerlink" title="4.12. HTML列表"></a>4.12. HTML列表</h3><h4 id="4-12-1-无序列表"><a href="#4-12-1-无序列表" class="headerlink" title="4.12.1. 无序列表"></a>4.12.1. 无序列表</h4><p> 无序列表是一个项目的列表，此列项目使用粗体圆点（典型的小黑圆圈）进行标记。<br>​ 无序列表始于 <code>&lt;ul&gt;</code> 标签。每个列表项始于<code>&lt;li&gt;</code> 。<br>​ 列表项内部可以使用段落、换行符、图片、链接以及其他列表等等。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;HTML列表&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;h4&gt;一个无序列表：&lt;/h4&gt;</span><br><span class="line">		&lt;ul&gt;</span><br><span class="line">			&lt;li&gt;咖啡&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;茶&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;牛奶&lt;/li&gt;</span><br><span class="line">		&lt;/ul&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-12-2-有序列表"><a href="#4-12-2-有序列表" class="headerlink" title="4.12.2. 有序列表"></a>4.12.2. 有序列表</h4><p> 有序列表也是一列项目，列表项目使用数字进行标记。<br>​ 有序列表始于 <code>&lt;ol&gt;</code> 标签。每个列表项始于 <code>&lt;li&gt;</code> 标签。<br>​ 列表项内部可以使用段落、换行符、图片、链接以及其他列表等等。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;HTML列表&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;h4&gt;一个有序列表：&lt;/h4&gt;</span><br><span class="line">		&lt;ol&gt;</span><br><span class="line">			&lt;li&gt;咖啡&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;牛奶&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;茶&lt;/li&gt;</span><br><span class="line">		&lt;/ol&gt;</span><br><span class="line">		&lt;ol start=&quot;50&quot;&gt;</span><br><span class="line">			&lt;li&gt;咖啡&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;牛奶&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;茶&lt;/li&gt;</span><br><span class="line">		&lt;/ol&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-13-HTML表单"><a href="#4-13-HTML表单" class="headerlink" title="4.13. HTML表单"></a>4.13. HTML表单</h3><h4 id="4-13-1-lt-form-gt-元素"><a href="#4-13-1-lt-form-gt-元素" class="headerlink" title="4.13.1. &lt;form&gt; 元素"></a>4.13.1. <code>&lt;form&gt;</code> 元素</h4><p> HTML 表单用于收集用户输入。<br>​ 表单元素指的是不同类型的 input 元素、复选框、单选按钮、提交按钮等等。<br>​ 表单用于向服务器传输数据。form 元素是块级元素。</p>
+<p> <strong>常用属性</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>action</td>
+<td>URL</td>
+<td>规定当提交表单时向何处发送表单数据</td>
+</tr>
+<tr>
+<td>method</td>
+<td>get、post</td>
+<td>规定用于发送 form-data 的 HTTP 方法</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Form_name</td>
+<td>规定表单的名称</td>
+</tr>
+</tbody></table>
+<h4 id="4-13-2-lt-input-gt-元素"><a href="#4-13-2-lt-input-gt-元素" class="headerlink" title="4.13.2. &lt;input&gt; 元素"></a>4.13.2. <code>&lt;input&gt;</code> 元素</h4><p> <code>&lt;input&gt;</code> 元素是最重要的表单元素。<br>​ <code>&lt;input&gt;</code> 元素有很多形态，根据不同的 type 属性。<br>​ <strong>常用属性</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>alt</td>
+<td>text</td>
+<td>定义图像输入的替代文本</td>
+</tr>
+<tr>
+<td>checked</td>
+<td>checked</td>
+<td>规定此 input 元素首次加载时应当被选中</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>disabled</td>
+<td>当 input 元素加载时禁用此元素</td>
+</tr>
+<tr>
+<td>readonly</td>
+<td>readonly</td>
+<td>规定输入字段为只读</td>
+</tr>
+<tr>
+<td>maxlength</td>
+<td>number</td>
+<td>规定输入字段中的字符的最大长度</td>
+</tr>
+<tr>
+<td>value</td>
+<td>value</td>
+<td>规定 input 元素的值</td>
+</tr>
+<tr>
+<td>type</td>
+<td>button checkbox file hidden image password radio reset submit text</td>
+<td>规定 input 元素的类型按钮 复选框 文件 隐藏域 图像形按钮 密码 单选框 重置按钮 提交按钮 文 本</td>
+</tr>
+</tbody></table>
+<h5 id="4-13-2-1-text-文本输入"><a href="#4-13-2-1-text-文本输入" class="headerlink" title="4.13.2.1. text 文本输入"></a>4.13.2.1. text 文本输入</h5><p> <code>&lt;input type=&quot;text&quot;&gt;</code> 定义用于文本输入的单行输入字段。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;form&gt;</span><br><span class="line">	First name:&lt;br&gt;</span><br><span class="line">	&lt;input type=&quot;text&quot; name=&quot;firstname&quot; /&gt;</span><br><span class="line">	&lt;br&gt; Last name:&lt;br&gt;</span><br><span class="line">	&lt;input type=&quot;text&quot; name=&quot;lastname&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-13-2-2-password-密码输入"><a href="#4-13-2-2-password-密码输入" class="headerlink" title="4.13.2.2. password 密码输入"></a>4.13.2.2. password 密码输入</h5><p> <code>&lt;input type=&quot;password&quot;&gt;</code> 定义密码字段。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;form&gt;</span><br><span class="line">	用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot; /&gt;</span><br><span class="line">	&lt;br /&gt;</span><br><span class="line">	密&amp;nbsp;&amp;nbsp;&amp;nbsp;码：&lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-13-2-3-radio-单选按钮输入"><a href="#4-13-2-3-radio-单选按钮输入" class="headerlink" title="4.13.2.3. radio 单选按钮输入"></a>4.13.2.3. radio 单选按钮输入</h5><p> <code>&lt;input type=&quot;radio&quot;&gt;</code> 定义单选按钮。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;form&gt;</span><br><span class="line">	&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;male&quot; checked /&gt;Male</span><br><span class="line">	&lt;br&gt;</span><br><span class="line">	&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;female&quot; /&gt;Female</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-13-2-4-checkbox-复选框"><a href="#4-13-2-4-checkbox-复选框" class="headerlink" title="4.13.2.4. checkbox 复选框"></a>4.13.2.4. checkbox 复选框</h5><p> <code>&lt;input type=&quot;checkbox&quot;&gt;</code> 定义复选框。<br>​ 复选框允许用户在有限数量的选项中选择零个或多个选项。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;form&gt;</span><br><span class="line">	&lt;input type=&quot;checkbox&quot; name=&quot;vehicle&quot; value=&quot;Bike&quot; /&gt;I have a bike</span><br><span class="line">	&lt;br&gt;</span><br><span class="line">	&lt;input type=&quot;checkbox&quot; name=&quot;vehicle&quot; value=&quot;Car&quot; /&gt;I have a car</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-13-2-5-submit-提交按钮"><a href="#4-13-2-5-submit-提交按钮" class="headerlink" title="4.13.2.5. submit 提交按钮"></a>4.13.2.5. submit 提交按钮</h5><p><code>&lt;input type=&quot;submit&quot;&gt;</code> 定义用于向表单处理程序（form-handler）提交表单的按钮。<br>表单处理程序通常是包含用来处理输入数据的脚本的服务器页面。</p>
+<p><strong>action 属性</strong><br>action 属性定义在提交表单时执行的动作。<br>向服务器提交表单的通常做法是使用提交按钮。<br>通常，表单会被提交到 web 服务器上的网页。<br>如果省略 action 属性，则 action 会被设置为访问当前页面。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;form action=&quot;http://www.shsxt.com&quot;&gt;</span><br><span class="line">	First name:</span><br><span class="line">	&lt;input type=&quot;text&quot; name=&quot;firstname&quot; value=&quot;Mickey&quot; /&gt;</span><br><span class="line">	&lt;br /&gt;</span><br><span class="line">	Last name:</span><br><span class="line">	&lt;input type=&quot;text&quot; name=&quot;lastname&quot; value=&quot;Mouse&quot; /&gt;</span><br><span class="line">	&lt;br /&gt;&lt;br /&gt;</span><br><span class="line">	&lt;input type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-13-2-6-select-下拉列表"><a href="#4-13-2-6-select-下拉列表" class="headerlink" title="4.13.2.6. select 下拉列表"></a>4.13.2.6. select 下拉列表</h5><p> 定义一个下拉列表。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;select name=&quot;city&quot;&gt;</span><br><span class="line">	&lt;option value=&quot;sh&quot;&gt;上海&lt;/option&gt;</span><br><span class="line">	&lt;option value=&quot;bj&quot;&gt;北京&lt;/option&gt;</span><br><span class="line">	&lt;option value=&quot;ah&quot;&gt;安徽&lt;/option&gt;</span><br><span class="line">	&lt;option value=&quot;zz&quot;&gt;郑州&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-13-2-7-textarea-文本域"><a href="#4-13-2-7-textarea-文本域" class="headerlink" title="4.13.2.7. textarea 文本域"></a>4.13.2.7. textarea 文本域</h5><p> 该标签定义多行的文本输入控件。文本区中可容纳无限数量的文本，可以通过 cols 和 rows 属性来<br>规定 textarea 的尺寸。cols 规定文本区内的可见宽度。rows 规定文本区内的可见行数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;textarea name=&quot;message&quot; rows=&quot;10&quot; cols=&quot;30&quot;&gt;</span><br><span class="line">	The cat was playing in the garden.</span><br><span class="line">&lt;/textarea&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-13-2-8-button-按钮"><a href="#4-13-2-8-button-按钮" class="headerlink" title="4.13.2.8. button 按钮"></a>4.13.2.8. button 按钮</h5><p> <code>&lt;button&gt;</code> 元素定义可点击的按钮。<br>​ <strong>常用属性</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>disabled</td>
+<td>disabled</td>
+<td>禁用该按钮</td>
+</tr>
+<tr>
+<td>type</td>
+<td>button、submit、reset</td>
+<td>规定按钮的类型</td>
+</tr>
+<tr>
+<td>value</td>
+<td>text</td>
+<td>规定按钮的初始值</td>
+</tr>
+<tr>
+<td>name</td>
+<td>button_name</td>
+<td>规定按钮的名称</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;button type=&quot;button&quot;&gt;Click Me!&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-13-2-9-label-标注标签"><a href="#4-13-2-9-label-标注标签" class="headerlink" title="4.13.2.9. label 标注标签"></a>4.13.2.9. label 标注标签</h5><p> <code>&lt;label&gt;</code> 标签为input 元素定义标注（标记）。<br>​ label元素不会呈现任何的特殊效果。label 标签的 for 属性应当与相关元素的 id 属性相同。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;label for=&quot;username&quot;&gt;用户名：&lt;/label&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; id=&quot;username&quot; name=&quot;username&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-14-HTML属性"><a href="#4-14-HTML属性" class="headerlink" title="4.14. HTML属性"></a>4.14. HTML属性</h3><p> HTML 标签可以拥有属性。属性提供了有关 HTML 元素的更多的信息。<br>​ 属性总是以名称/值对的形式出现，比如：name=”value”。<br>​ 属性总是在 HTML 元素的开始标签中规定。</p>
+<h4 id="4-14-1-HTML提示：使用小写属性"><a href="#4-14-1-HTML提示：使用小写属性" class="headerlink" title="4.14.1. HTML提示：使用小写属性"></a>4.14.1. HTML提示：使用小写属性</h4><p> 属性和属性值对大小写不敏感。<br>​ 不过，万维网联盟在其 HTML 4 推荐标准中推荐小写的属性/属性值。<br>​ 而新版本的 HTML 要求使用小写属性。</p>
+<h4 id="4-14-2-始终为属性值加引号"><a href="#4-14-2-始终为属性值加引号" class="headerlink" title="4.14.2. 始终为属性值加引号"></a>4.14.2. 始终为属性值加引号</h4><p> 属性值应该始终被包括在引号内。双引号是最常用的，不过使用单引号也没有问题。<br>​ 在某些个别的情况下，比如属性值本身就含有双引号，那么您必须使用单引号，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;input name=&#x27;Bill &quot;HelloWorld&quot; Gates&#x27; /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>根据百度百科查询自己喜欢的人物，制作其人物简历。（css文件直接导入，按照文档样式说明使用）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br></pre></td><td class="code"><pre><span class="line">COPY&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;!-- 文档的属性 告诉浏览器采用什么编码解析 --&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot; /&gt;</span><br><span class="line">		&lt;title&gt;人物简历——吴彦祖&lt;/title&gt;</span><br><span class="line">		&lt;!-- 引入 CSS 文件 --&gt;</span><br><span class="line">		&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/resume.css&quot; /&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;!-- 整个页面布局 --&gt;</span><br><span class="line">		&lt;div id=&quot;container&quot;&gt;</span><br><span class="line">			&lt;!-- h1 标题标签 --&gt;</span><br><span class="line">			&lt;h1&gt;人物简历——吴彦祖&lt;/h1&gt;</span><br><span class="line">			&lt;!-- 导航信息 --&gt;</span><br><span class="line">			&lt;div id=&quot;navigation&quot;&gt;</span><br><span class="line">				&lt;!-- 无序列表 --&gt;</span><br><span class="line">				&lt;ul&gt;</span><br><span class="line">					&lt;!-- a 配置了锚点 --&gt;</span><br><span class="line">					&lt;li&gt;&lt;a href=&quot;#1&quot;&gt;基本信息&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">					&lt;li&gt;&lt;a href=&quot;#2&quot;&gt;早年经历&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">					&lt;li&gt;&lt;a href=&quot;#3&quot;&gt;演艺经历&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">					&lt;li&gt;&lt;a href=&quot;#4&quot;&gt;获奖记录&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">					&lt;li&gt;&lt;a href=&quot;#5&quot;&gt;社会活动&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">					&lt;li&gt;&lt;a href=&quot;#6&quot;&gt;联系方式&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">				&lt;/ul&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;!-- 图片和视频 --&gt;</span><br><span class="line">			&lt;div class=&quot;center&quot;&gt;</span><br><span class="line">				&lt;img class=&quot;margin&quot; src=&quot;img/Daniel_Wu.jpg&quot; title=&quot;吴彦祖&quot; width=&quot;200px&quot; height=&quot;277px&quot; /&gt;</span><br><span class="line">				&lt;video class=&quot;margin&quot; src=&quot;mp4/Daniel_Wu.mp4&quot; title=&quot;吴彦祖晒偶像照为其庆生&quot; controls height=&quot;277px&quot;&gt;&lt;/video&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;!-- 所有人物信息 --&gt;</span><br><span class="line">			&lt;div id=&quot;1&quot; class=&quot;margin&quot;&gt;</span><br><span class="line">				&lt;!-- 基本信息 --&gt;</span><br><span class="line">				&lt;div class=&quot;word&quot;&gt;</span><br><span class="line">					&lt;h2&gt;基本信息&lt;/h2&gt;</span><br><span class="line">					&lt;p&gt;吴彦祖（Daniel</span><br><span class="line">						Wu），1974年9月30日出生于美国旧金山，华语影视男演员、导演、制片人，毕业于美国俄勒冈大学。1998年出演了个人首部电影作品《美少年之恋》，从而踏入演艺圈；同年，凭借文艺片《玻璃之城》提名第18届香港电影金像奖最佳新演员。2001年，主演文艺片《游园惊梦》。2003年，凭借动作片《旺角黑夜》提名第24届香港电影金像奖最佳男主角；同年，首次担任电影监制并主演了惊悚片《妖夜回廊》。</span><br><span class="line">					&lt;/p&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">				&lt;!-- 早年经历信息 --&gt;</span><br><span class="line">				&lt;div id=&quot;2&quot; class=&quot;word&quot;&gt;</span><br><span class="line">					&lt;h2&gt;早年经历&lt;/h2&gt;</span><br><span class="line">					&lt;p&gt;</span><br><span class="line">						吴彦祖出生于加利福尼亚州伯克利，并在奥林达长大。6岁时，吴彦祖在看完功夫电影《少林寺》后，对武术产生了兴趣。11岁时，吴彦祖便拜一名北京艺人为师开始习武，教他的师父是吴彦祖的母亲找的，而此前，他的母亲还担心他学会了功夫跟人打架，但最后还是拗不过他对习武的热情。高中时，吴彦祖也曾叛逆过，经常在街上玩滑板，听的是朋克、重金属、饶舌等地下音乐，喜欢打架更甚于学习。这一切直至他的母亲因心脏病住院才有了彻底的改变。在母亲生病期间，吴彦祖白天在学校认真读书，下课后就到医院陪母亲。为此他甚至去学习了简单的气功疗法，用来辅助母亲的治疗。</span><br><span class="line">					&lt;/p&gt;</span><br><span class="line">					&lt;p&gt;</span><br><span class="line">						1993年，吴彦祖在美国俄勒冈大学攻读建筑系，并获得建筑副修奖学金。1994年，吴彦祖赢得California Martial Art</span><br><span class="line">						Competitions的亚军，并在美国西岸排名第二位。同时，吴彦祖还成立了俄勒冈大学中国武术学会，并成为第一任教练，收了二十几个徒弟，一共教了五年。1995年，吴彦祖随师父到北京什刹海武校参加集训，并获得了北京国际武术比赛长拳组第五名，太极拳组第六名。</span><br><span class="line">					&lt;/p&gt;</span><br><span class="line">					&lt;p&gt;</span><br><span class="line">						1997年，毕业后的吴彦祖前往香港旅行，后在姐姐的建议下开始当模特。四个月后，导演杨凡在看到吴彦祖拍摄的服装广告后，与他接洽成为他下一部电影的演员，而吴彦祖表示自己没有表演经验而拒绝了。后来杨凡天天给吴彦祖打电话并说服了他。</span><br><span class="line">					&lt;/p&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">				&lt;!-- 演艺经历信息 --&gt;</span><br><span class="line">				&lt;div id=&quot;3&quot;&gt;</span><br><span class="line">					&lt;h2&gt;演艺经历&lt;/h2&gt;</span><br><span class="line">					&lt;table border=&quot;1&quot; align=&quot;center&quot; cellspacing=&quot;0&quot;&gt;</span><br><span class="line">						&lt;tr&gt;</span><br><span class="line">							&lt;th&gt;时期&lt;/th&gt;</span><br><span class="line">							&lt;th&gt;经历&lt;/th&gt;</span><br><span class="line">						&lt;/tr&gt;</span><br><span class="line">						&lt;tr&gt;</span><br><span class="line">							&lt;!-- td列标签 无任何效果 --&gt;</span><br><span class="line">							&lt;td&gt;1998年&lt;/td&gt;</span><br><span class="line">							&lt;td&gt;《美少年之恋》，他在片中饰演帅气十足的警察Sam&lt;/td&gt;</span><br><span class="line">						&lt;/tr&gt;</span><br><span class="line">						&lt;tr&gt;</span><br><span class="line">							&lt;td&gt;1999年&lt;/td&gt;</span><br><span class="line">							&lt;td&gt;吴彦祖与成龙、舒淇合作主演的爱情喜剧片《玻璃樽》上映&lt;/td&gt;</span><br><span class="line">						&lt;/tr&gt;</span><br><span class="line">						&lt;tr&gt;</span><br><span class="line">							&lt;td&gt;2000年&lt;/td&gt;</span><br><span class="line">							&lt;td&gt;首次与林超贤导演合作，并出演了警匪动作片《重装警察》&lt;/td&gt;</span><br><span class="line">						&lt;/tr&gt;</span><br><span class="line">						&lt;tr&gt;</span><br><span class="line">							&lt;td&gt;2001年&lt;/td&gt;</span><br><span class="line">							&lt;td&gt;与古天乐合作出演了动作片《野兽之瞳》，在片中饰演一对拳击兄弟&lt;/td&gt;</span><br><span class="line">						&lt;/tr&gt;</span><br><span class="line">						&lt;tr&gt;</span><br><span class="line">							&lt;td&gt;2002年&lt;/td&gt;</span><br><span class="line">							&lt;td&gt;吴彦祖与杨千嬅首次合作，并出演了爱情喜剧片《新扎师妹》&lt;/td&gt;</span><br><span class="line">						&lt;/tr&gt;</span><br><span class="line">						&lt;tr&gt;</span><br><span class="line">							&lt;td&gt;2004年&lt;/td&gt;</span><br><span class="line">							&lt;td&gt;与张柏芝合作，出演由尔冬升执导的动作剧情片《旺角黑夜》 &lt;/td&gt;</span><br><span class="line">						&lt;/tr&gt;</span><br><span class="line">						&lt;tr&gt;</span><br><span class="line">							&lt;td&gt;2005年&lt;/td&gt;</span><br><span class="line">							&lt;td&gt;吴彦祖与梁家辉、郑秀文合作，主演了根据同名小说改编的爱情片《长恨歌》 &lt;/td&gt;</span><br><span class="line">						&lt;/tr&gt;</span><br><span class="line">						&lt;tr&gt;</span><br><span class="line">							&lt;td&gt;2006年&lt;/td&gt;</span><br><span class="line">							&lt;td&gt;吴彦祖执导并担任编剧的个人电影处女作《四大天王》上映&lt;/td&gt;</span><br><span class="line">						&lt;/tr&gt;</span><br><span class="line">						&lt;tr&gt;</span><br><span class="line">							&lt;td&gt;2016年&lt;/td&gt;</span><br><span class="line">							&lt;td&gt;由邓肯·琼斯执导的奇幻动作片《魔兽》在中国内地上映，吴彦祖在片中饰演了狡猾又残忍的古尔丹&lt;/td&gt;</span><br><span class="line">						&lt;/tr&gt;</span><br><span class="line">						&lt;tr&gt;</span><br><span class="line">							&lt;td&gt;2017年&lt;/td&gt;</span><br><span class="line">							&lt;td&gt;吴彦祖主演的功夫美剧《荒原第二季》在美国AMC电视台首播&lt;/td&gt;</span><br><span class="line">						&lt;/tr&gt;</span><br><span class="line">						&lt;tr&gt;</span><br><span class="line">							&lt;td&gt;2018年&lt;/td&gt;</span><br><span class="line">							&lt;td&gt;与艾丽西亚·维坎德主演的动作奇幻片《古墓丽影：源起之战》在美国和中国内地同步上映&lt;/td&gt;</span><br><span class="line">						&lt;/tr&gt;</span><br><span class="line">					&lt;/table&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">				&lt;!-- 获奖记录信息 --&gt;</span><br><span class="line">				&lt;div id=&quot;4&quot; class=&quot;word&quot;&gt;</span><br><span class="line">					&lt;h2&gt;获奖记录&lt;/h2&gt;</span><br><span class="line">					&lt;p&gt;作业：请参照&lt;a href=&quot;https://baike.baidu.com/item/%E5%90%B4%E5%BD%A6%E7%A5%96/182990?fr=aladdin#1&quot;</span><br><span class="line">							target=&quot;_blank&quot;&gt;吴彦祖百度百科&lt;/a&gt;完成获奖记录的表格&lt;/p&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">				&lt;!-- 社会活动信息 --&gt;</span><br><span class="line">				&lt;div id=&quot;5&quot; class=&quot;word&quot;&gt;</span><br><span class="line">					&lt;h2&gt;社会活动&lt;/h2&gt;</span><br><span class="line">					&lt;p&gt;2006年底，在香港“SuperStars”影展及摄影集慈善义卖活动上，余文乐、吴彦祖、郭富城等300多位明星为慈善活动所拍摄的裸照曝光。&lt;/p&gt;</span><br><span class="line">					&lt;p&gt;2008年6月4日，吴彦祖录制爱心视频并参与了周迅发起的“星星之火，传爱四川”行动 。&lt;/p&gt;</span><br><span class="line">					&lt;p&gt;2009年2月，吴彦祖为四川地震灾区彭州小鱼洞的群众修建永久性房屋；5月10日，吴彦祖参加了“壹家人壹起走——纪念5.12汶川行”活动</span><br><span class="line">						；7月6日，吴彦祖向四川地震灾区出资捐建5间房屋，并且表示每年都会抽出几次时间去四川探访 ；9月20日，吴彦祖携手吴君如在香港出席了“仁人家园义工周”的公益活动 。&lt;/p&gt;</span><br><span class="line">					&lt;p&gt;2013年11月1日，“2014爱·家庭慈善月历”在香港推出，包括吴彦祖等在内的12个明星家庭齐心推动此公益活动。&lt;/p&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">				&lt;!-- 联系方式信息 --&gt;</span><br><span class="line">				&lt;div id=&quot;6&quot;&gt;</span><br><span class="line">					&lt;h2&gt;联系方式&lt;/h2&gt;</span><br><span class="line">					&lt;form action=&quot;mailto://124059770@qq.com&quot;&gt;</span><br><span class="line">						&lt;p&gt;请将你想告诉我的话发送至我的邮箱：&lt;/p&gt;</span><br><span class="line">						&lt;textarea&gt;&lt;/textarea&gt;&lt;br /&gt;</span><br><span class="line">						&lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">					&lt;/form&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">				&lt;!-- 返回顶部超链接 --&gt;</span><br><span class="line">				&lt;div class=&quot;center&quot;&gt;</span><br><span class="line">					&lt;a href=&quot;#&quot;&gt;返回顶部&lt;/a&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;!-- 版权信息 --&gt;</span><br><span class="line">			&lt;div class=&quot;center&quot; id=&quot;copyright&quot;&gt;</span><br><span class="line">				&lt;p&gt;©2018 Baidu 使用百度前必读 | 百科协议 | 隐私政策 | 百度百科合作平台 | 京ICP证030173号&lt;/p&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>resume.css</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">COPY/* 采用什么编码解析文件 */</span><br><span class="line">@charset &quot;utf-8&quot;;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 使用id选择器渲染id=&quot;container&quot;标签的样式</span><br><span class="line"> */</span><br><span class="line">#container &#123;</span><br><span class="line">	/* </span><br><span class="line">	 * 上外边距是 0px</span><br><span class="line">	 * 右外边距是缩进15%</span><br><span class="line">	 * 下外边距是 0px</span><br><span class="line">	 * 左外边距是 0px</span><br><span class="line">	 */</span><br><span class="line">	margin: 0 15%;</span><br><span class="line">	background: #F0F0F0;/* 背景色#F0F0F0 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 使用元素选择器渲染所有h1标签的样式</span><br><span class="line"> */</span><br><span class="line">h1 &#123;</span><br><span class="line">	height: 70px;/* 高度70px */</span><br><span class="line">	background: cornflowerblue;/* 背景色矢车菊蓝德国国花 */</span><br><span class="line">	line-height: 70px;/* 行间距70px */</span><br><span class="line">	color: white;/* 字体白色 */</span><br><span class="line">	text-indent: 70px;/* 段落缩进70px */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 使用id选择器渲染id=&quot;navigation&quot;标签的样式</span><br><span class="line"> */</span><br><span class="line">#navigation &#123;</span><br><span class="line">	text-align: center;/* 居中 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 使用id选择器定位到id=&quot;navigation&quot;标签</span><br><span class="line"> * 然后渲染其子标签li的样式</span><br><span class="line"> */</span><br><span class="line">#navigation li &#123;</span><br><span class="line">	/* inline-block将li元素变为行内块元素 */</span><br><span class="line">	display: inline-block;</span><br><span class="line">	width: 100px;/* 宽100px */</span><br><span class="line">	height: 30px;/* 高30px */</span><br><span class="line">	line-height: 30px;/* 行间距30px */</span><br><span class="line">	background-color: cornflowerblue;/* 背景色矢车菊蓝 */</span><br><span class="line">	border: cornflowerblue 1px solid;/* 边框1px 颜色为矢车菊蓝 */</span><br><span class="line">	border-radius: 0 10px;/* 边框左下角和右上角变圆10px */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 使用id选择器定位到id=&quot;navigation&quot;标签</span><br><span class="line"> * 然后渲染其子标签li的子标签a的样式</span><br><span class="line"> */</span><br><span class="line">#navigation li a&#123;</span><br><span class="line">	color: white;/* 字体白色 */</span><br><span class="line">	text-decoration: none;/* 移除超链接下划线样式*/</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 使用id选择器定位到id=&quot;navigation&quot;标签</span><br><span class="line"> * 然后渲染其子标签li的子标签a的样式(渲染方式鼠标移动至标签后)</span><br><span class="line"> */</span><br><span class="line">#navigation li a:hover &#123;</span><br><span class="line">	font-weight: bold;/* 字体加粗 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 使用类选择器渲染所有class=&quot;center&quot;标签的样式</span><br><span class="line"> */</span><br><span class="line">.center &#123;</span><br><span class="line">	text-align: center;/* 居中 */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 使用类选择器渲染所有class=&quot;word&quot;标签的样式</span><br><span class="line"> * 然后渲染其子标签p的样式</span><br><span class="line"> */</span><br><span class="line">.word p &#123;</span><br><span class="line">	text-indent: 32px;/* 段落缩进32px */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 使用类选择器渲染所有class=&quot;margin&quot;标签的样式</span><br><span class="line"> */</span><br><span class="line">.margin &#123;</span><br><span class="line">	margin: 0 30px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 使用元素选择器渲染所有textarea标签的样式</span><br><span class="line"> */</span><br><span class="line">textarea &#123;</span><br><span class="line">	width: 100%;/* 宽100%于父标签 */</span><br><span class="line">	height: 100px;/* 高100px */</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 使用id选择器渲染id=&quot;copyright&quot;标签的样式</span><br><span class="line"> */</span><br><span class="line">#copyright &#123;</span><br><span class="line">	height: 70px;/* 高70px */</span><br><span class="line">	background: cornflowerblue;/* 背景色矢车菊蓝 */</span><br><span class="line">	text-align: center;/* 居中 */</span><br><span class="line">	color: white;/* 字体白色 */</span><br><span class="line">	line-height: 70px;/* 行间距70px */</span><br><span class="line">	font-size: 12px;/* 字体大小12px */</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 演示效果：</p>
+<p><img src="https://dao-1306038680.cos.ap-shanghai.myqcloud.com/img/image-20210626222036230.png" alt="image-20210626222036230"></p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            小轩同学
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/gyx.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/08/05/3-%E4%BA%A4%E4%BA%92JavaScript/">3.交互JavaScript</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/08/05/2-%E7%82%AB%E9%85%B7CSS/">2.炫酷CSS</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/08/05/1-HTML%E5%9F%BA%E7%A1%80/">1.HTML基础</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/08/05/%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%89%B9%E7%82%B9/">常用的几种编码方式及其特点</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/08/05/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%8A%A5%E5%91%8A/">关于自建博客的报告</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/08/04/%E4%BD%A0%E5%A5%BD-%E4%B8%96%E7%95%8C/">一篇关于博客的自述</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/08/04/%E4%BD%A0%E5%A5%BD-%E4%B8%96%E7%95%8C/">一篇关于博客的自述</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/08/05/%E5%85%B3%E4%BA%8E%E8%87%AA%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%8A%A5%E5%91%8A/">关于自建博客的报告</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/08/05/2-%E7%82%AB%E9%85%B7CSS/">2.炫酷CSS</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/08/05/%E5%B8%B8%E7%94%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%89%B9%E7%82%B9/">常用的几种编码方式及其特点</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/08/05/1-HTML%E5%9F%BA%E7%A1%80/">1.HTML基础</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2021/08/05/3-%E4%BA%A4%E4%BA%92JavaScript/">3.交互JavaScript</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2021/08/05/1-HTML%E5%9F%BA%E7%A1%80/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2021/08/05/1-HTML%E5%9F%BA%E7%A1%80/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2021/08/05/1-HTML%E5%9F%BA%E7%A1%80/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E8%87%AA%E8%BF%B0/" style="font-size: 11.964263286153702px;" class="tag-cloud-link">博客自述</a>
+    
+    <a href="/tags/%E5%8D%9A%E5%AE%A2%E6%9D%A5%E6%BA%90/" style="font-size: 17.04359335179753px;" class="tag-cloud-link">博客来源</a>
+    
+    <a href="/tags/CSS/" style="font-size: 13.163855997859557px;" class="tag-cloud-link">CSS</a>
+    
+    <a href="/tags/%E7%BC%96%E7%A0%81/" style="font-size: 14.589111996842387px;" class="tag-cloud-link">编码</a>
+    
+    <a href="/tags/HTML/" style="font-size: 13.345596168366335px;" class="tag-cloud-link">HTML</a>
+    
+    <a href="/tags/JavaScript/" style="font-size: 11.441710069588623px;" class="tag-cloud-link">JavaScript</a>
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://www.chelp.top/" target="_blank">码课工作室</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="http://www.chelp.top/jianli/gyx/" target="_blank">个人简历</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 小轩同学 Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+
+<script src="/js/activate-power-mode.js"></script>
+
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+<script src="/js/oni.js"></script>
+
+
+
+
+</html>
