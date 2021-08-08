@@ -1,6 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JAVA笔记day2</title>
+    <url>/2021/08/07/java-bi-ji-day2/</url>
+    <content><![CDATA[<h1 id="JAVA笔记-Day2"><a href="#JAVA笔记-Day2" class="headerlink" title="JAVA笔记-Day2"></a>JAVA笔记-Day2</h1><h3 id="昨日回顾"><a href="#昨日回顾" class="headerlink" title="昨日回顾"></a>昨日回顾</h3><hr>
+<h4 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h4><hr>
+<p><strong>什么是类？</strong></p>
+<p>1、类是：分类、类别。</p>
+<p>2、通过分类，我们可以区别不同的事物种类，在日常生活当中，我们常常这样做</p>
+<p>3、所以，类是一组具有相同特性(属性)与行为(方法)的事物集合。</p>
+<p><strong>类与对象的关系</strong></p>
+<p>1、类表示一个共性的产物，是一个综合的特征，而对象，是一个个性的产物，是一个个体的特征。</p>
+<p>2、类由属性和方法组成：</p>
+<ul>
+<li>属性：就相当于一个个的特征</li>
+<li>方法：就相当于人的一个个的行为，Such as：说话、吃饭、唱歌、睡觉</li>
+</ul>
+<p>为了方便理解(类与对象即为包含关系，类包含对象，例如：人类是一个类，然后我、你、李小龙、彭于晏即为对象)</p>
+<hr>
+<h3 id="类和对象的定义格式"><a href="#类和对象的定义格式" class="headerlink" title="类和对象的定义格式"></a>类和对象的定义格式</h3><hr>
+<p>在Java中可以使用以下的语句定义一个类</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名称</span>&#123;</span><br><span class="line">	属性名称;</span><br><span class="line">	返回值类型 方法名称()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对象的定义：</p>
+<p>一个类要想真正的进行操作，则必须依靠对象，对象的定义格式如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">类名称 对象名称 = <span class="keyword">new</span> 类名称();</span><br></pre></td></tr></table></figure>
+
+<p>按照以上的格式就可以产生对象了。 </p>
+<p>如果要想访问类中的属性或方法(方法的定义) .</p>
+<p>则可以依靠以下的语法形式：</p>
+<p>访问类中的属性：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">对象.属性;</span><br></pre></td></tr></table></figure>
+
+<p>调用类中的方法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">对象.方法();</span><br></pre></td></tr></table></figure>
+
+<p>在java中对象声明有两种含义：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">声明对象：Man man = <span class="keyword">null</span>;</span><br><span class="line"><span class="comment">//表示声明了一个对象，但是此对象无法使用，man没有具体的内存指向，需要实例化一下也就是通常所说的new一下</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">实例化对象: man = <span class="keyword">new</span> Man();</span><br><span class="line"><span class="comment">//表示实例化了对象，也就是常说的new了一下对象，接下开就可以使用它了</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><strong>定义类、定义对象、定义方法、访问对象的属性、调用对象的方法例子：</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	此代码编译时会出现两个.class文件</span></span><br><span class="line"><span class="comment">	一个类就是一个.class</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Day2</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Man man = <span class="keyword">null</span>;   <span class="comment">//声明一个类的变量(除了八种基本数据类型以外，都是引用数据类型，包括数组)</span></span><br><span class="line">        <span class="comment">//表示声明了一个对象，但是此对象无法使用，man没有具体的内存指向</span></span><br><span class="line">        man = <span class="keyword">new</span> Man();  <span class="comment">//创建一个Man类型的对象,实例化对象</span></span><br><span class="line">        <span class="comment">//有了对象，就可以调用对象的属性和方法</span></span><br><span class="line">        man.name = <span class="string">&quot;小轩同学&quot;</span>;</span><br><span class="line">        man.age = <span class="number">21</span>;</span><br><span class="line">        </span><br><span class="line">        man.walk(); <span class="comment">//调用walk方法，那么方法就会被执行。</span></span><br><span class="line">        man.code(); <span class="comment">//调用code方法，那么方法就会被执行。</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//匿名对象：只能使用一次，用完后，该对象就会被释放</span></span><br><span class="line">        <span class="keyword">new</span> Man().code();</span><br><span class="line">        </span><br><span class="line">        man = <span class="keyword">null</span>; <span class="comment">//把对象释放</span></span><br><span class="line">        <span class="comment">//man.code(); //当对象不存在时，调用该对象的属性和方法将报错(空指针)</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义一个类(类型)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Man</span></span>&#123;</span><br><span class="line">    <span class="comment">//在类中定义属性(特征)</span></span><br><span class="line">    String name;	<span class="comment">//字符串是引用类型变量,不是基本数据类型变量</span></span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="comment">//在类中定义方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">walk</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我是&quot;</span>+name+<span class="string">&quot;我&quot;</span>+age+<span class="string">&quot;岁，我能走路&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">code</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我能写代码,尽管写的不好&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此代码运行之后的结果：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">我是小轩同学我<span class="number">21</span>岁，我能走路</span><br><span class="line">我能写代码,尽管写的不好</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="对象内存分析"><a href="#对象内存分析" class="headerlink" title="对象内存分析"></a>对象内存分析</h3><hr>
+<p>1、new关键字表示创建一个对象</p>
+<p>2、new关键字表示实例化一个对象</p>
+<p>3、new关键字表示申请内存空间</p>
+<p><em>注意：如果使用一个没有申请内存空间的对象，会报空指针异常</em></p>
+<p><code>java.lang.NullPointerException</code></p>
+<hr>
+<p><strong>对象在内存中的结构：</strong></p>
+<p>Man man = null;</p>
+<p><img src="https://z3.ax1x.com/2021/08/07/fMP7b6.png" alt="fMP7b6.png"></p>
+<p>man = new Man();</p>
+<p><img src="https://z3.ax1x.com/2021/08/07/fMPTDx.png" alt="fMPTDx.png"></p>
+<p><strong>给对象的属性赋值</strong></p>
+<p>man.name = “小轩同学”</p>
+<p>man.age = 21</p>
+<p>则堆内存中的 name = “小轩同学” age = 21</p>
+<p><strong>一个类下创建多个对象</strong></p>
+<p>各个对象指向堆内存各自的内存空间</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Man man1 = <span class="keyword">null</span>;</span><br><span class="line">Man man2 = <span class="keyword">null</span>;</span><br><span class="line">man1 = <span class="keyword">new</span> Man();</span><br><span class="line">man2 = <span class="keyword">new</span> Man();</span><br><span class="line">man1.name = <span class="string">&quot;小轩同学&quot;</span>;</span><br><span class="line">man1.age = <span class="number">21</span>;</span><br><span class="line">man2.name = <span class="string">&quot;小张同学&quot;</span>;</span><br><span class="line">man2.age = <span class="number">22</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>对象之间的赋值</strong></p>
+<p>各个对象指向堆内存同一个内存空间</p>
+<p>如果在此时更改其中一个对象的属性，另一个对象的相对应的属性也会发生变化，因为这两个对象其实为同一个对象，更改的为同一个“东西”</p>
+<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">Man man1 = null<span class="comment">;</span></span><br><span class="line">Man man2 = null<span class="comment">;</span></span><br><span class="line"><span class="attribute">man1</span> = new Man()<span class="comment">;</span></span><br><span class="line">man1.name = <span class="string">&quot;小轩同学&quot;</span><span class="comment">;</span></span><br><span class="line">man1.age = <span class="number">21</span><span class="comment">;</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">man2</span> = man1<span class="comment">;//对象之间的赋值，相同类型才可以赋值</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>如果堆内存的一个空间没有被栈内存所指向，那么虚拟机会认为此堆内存是垃圾内存，会被进行回收</p>
+<hr>
+<h3 id="类与对象小结"><a href="#类与对象小结" class="headerlink" title="类与对象小结"></a>类与对象小结</h3><ol>
+<li>new关键字：表示向内存申请空间，也表示实例化一个对象，创建一个对象。</li>
+<li>一个对象在内存中的大小，由该对象的所有属性所占的内存大小的总和。引用类型变量在32位系统上占4个字节，在64位系统上占8个字节。加上额外的对象隐性数据所占大小。</li>
+<li>相同的类型才可以赋值</li>
+<li>不同的引用，指向同一个对象，任何一个引用改变对象的值，其它引用都会反映出来。</li>
+<li>编程时要注意的问题，在确定不使用对象时，要尽早释放对象：引用 = null;</li>
+<li>当一个堆中的对象没有被任何引用变量所指向时，该对象会被JVM的GC程序认为是垃圾对象，从而被回收。</li>
+</ol>
+<hr>
+]]></content>
+      <categories>
+        <category>JAVA笔记</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+        <tag>面向对象编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA笔记day1</title>
     <url>/2021/08/06/java-bi-ji-day1/</url>
     <content><![CDATA[<h1 id="JAVA笔记-Day1"><a href="#JAVA笔记-Day1" class="headerlink" title="JAVA笔记-Day1"></a>JAVA笔记-Day1</h1><hr>
@@ -168,99 +261,6 @@
       </categories>
       <tags>
         <tag>博客来源</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA笔记day2</title>
-    <url>/2021/08/07/java-bi-ji-day2/</url>
-    <content><![CDATA[<h1 id="JAVA笔记-Day2"><a href="#JAVA笔记-Day2" class="headerlink" title="JAVA笔记-Day2"></a>JAVA笔记-Day2</h1><h3 id="昨日回顾"><a href="#昨日回顾" class="headerlink" title="昨日回顾"></a>昨日回顾</h3><hr>
-<h4 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h4><hr>
-<p><strong>什么是类？</strong></p>
-<p>1、类是：分类、类别。</p>
-<p>2、通过分类，我们可以区别不同的事物种类，在日常生活当中，我们常常这样做</p>
-<p>3、所以，类是一组具有相同特性(属性)与行为(方法)的事物集合。</p>
-<p><strong>类与对象的关系</strong></p>
-<p>1、类表示一个共性的产物，是一个综合的特征，而对象，是一个个性的产物，是一个个体的特征。</p>
-<p>2、类由属性和方法组成：</p>
-<ul>
-<li>属性：就相当于一个个的特征</li>
-<li>方法：就相当于人的一个个的行为，Such as：说话、吃饭、唱歌、睡觉</li>
-</ul>
-<p>为了方便理解(类与对象即为包含关系，类包含对象，例如：人类是一个类，然后我、你、李小龙、彭于晏即为对象)</p>
-<hr>
-<h3 id="类和对象的定义格式"><a href="#类和对象的定义格式" class="headerlink" title="类和对象的定义格式"></a>类和对象的定义格式</h3><hr>
-<p>在Java中可以使用以下的语句定义一个类</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名称</span>&#123;</span><br><span class="line">	属性名称;</span><br><span class="line">	返回值类型 方法名称()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>对象的定义：</p>
-<p>一个类要想真正的进行操作，则必须依靠对象，对象的定义格式如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">类名称 对象名称 = <span class="keyword">new</span> 类名称();</span><br></pre></td></tr></table></figure>
-
-<p>按照以上的格式就可以产生对象了。 </p>
-<p>如果要想访问类中的属性或方法(方法的定义) .</p>
-<p>则可以依靠以下的语法形式：</p>
-<p>访问类中的属性：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">对象.属性;</span><br></pre></td></tr></table></figure>
-
-<p>调用类中的方法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">对象.方法();</span><br></pre></td></tr></table></figure>
-
-<p>在java中对象声明有两种含义：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">声明对象：Man man = <span class="keyword">null</span>;</span><br><span class="line"><span class="comment">//表示声明了一个对象，但是此对象无法使用，man没有具体的内存指向，需要实例化一下也就是通常所说的new一下</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">实例化对象: man = <span class="keyword">new</span> Man();</span><br><span class="line"><span class="comment">//表示实例化了对象，也就是常说的new了一下对象，接下开就可以使用它了</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p><strong>定义类、定义对象、定义方法、访问对象的属性、调用对象的方法例子：</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	此代码编译时会出现两个.class文件</span></span><br><span class="line"><span class="comment">	一个类就是一个.class</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Day2</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Man man = <span class="keyword">null</span>;   <span class="comment">//声明一个类的变量(除了八种基本数据类型以外，都是引用数据类型，包括数组)</span></span><br><span class="line">        <span class="comment">//表示声明了一个对象，但是此对象无法使用，man没有具体的内存指向</span></span><br><span class="line">        man = <span class="keyword">new</span> Man();  <span class="comment">//创建一个Man类型的对象,实例化对象</span></span><br><span class="line">        <span class="comment">//有了对象，就可以调用对象的属性和方法</span></span><br><span class="line">        man.name = <span class="string">&quot;小轩同学&quot;</span>;</span><br><span class="line">        man.age = <span class="number">21</span>;</span><br><span class="line">        </span><br><span class="line">        man.walk(); <span class="comment">//调用walk方法，那么方法就会被执行。</span></span><br><span class="line">        man.code(); <span class="comment">//调用code方法，那么方法就会被执行。</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//匿名对象：只能使用一次，用完后，该对象就会被释放</span></span><br><span class="line">        <span class="keyword">new</span> Man().code();</span><br><span class="line">        </span><br><span class="line">        man = <span class="keyword">null</span>; <span class="comment">//把对象释放</span></span><br><span class="line">        <span class="comment">//man.code(); //当对象不存在时，调用该对象的属性和方法将报错(空指针)</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义一个类(类型)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Man</span></span>&#123;</span><br><span class="line">    <span class="comment">//在类中定义属性(特征)</span></span><br><span class="line">    String name;	<span class="comment">//字符串是引用类型变量,不是基本数据类型变量</span></span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="comment">//在类中定义方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">walk</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我是&quot;</span>+name+<span class="string">&quot;我&quot;</span>+age+<span class="string">&quot;岁，我能走路&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">code</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我能写代码,尽管写的不好&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>此代码运行之后的结果：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">我是小轩同学我<span class="number">21</span>岁，我能走路</span><br><span class="line">我能写代码,尽管写的不好</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="对象内存分析"><a href="#对象内存分析" class="headerlink" title="对象内存分析"></a>对象内存分析</h3><hr>
-<p>1、new关键字表示创建一个对象</p>
-<p>2、new关键字表示实例化一个对象</p>
-<p>3、new关键字表示申请内存空间</p>
-<p><em>注意：如果使用一个没有申请内存空间的对象，会报空指针异常</em></p>
-<p><code>java.lang.NullPointerException</code></p>
-<hr>
-<p><strong>对象在内存中的结构：</strong></p>
-<p>Man man = null;</p>
-<p><img src="https://z3.ax1x.com/2021/08/07/fMP7b6.png" alt="fMP7b6.png"></p>
-<p>man = new Man();</p>
-<p><img src="https://z3.ax1x.com/2021/08/07/fMPTDx.png" alt="fMPTDx.png"></p>
-<p><strong>给对象的属性赋值</strong></p>
-<p>man.name = “小轩同学”</p>
-<p>man.age = 21</p>
-<p>则堆内存中的 name = “小轩同学” age = 21</p>
-<p><strong>一个类下创建多个对象</strong></p>
-<p>各个对象指向堆内存各自的内存空间</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Man man1 = <span class="keyword">null</span>;</span><br><span class="line">Man man2 = <span class="keyword">null</span>;</span><br><span class="line">man1 = <span class="keyword">new</span> Man();</span><br><span class="line">man2 = <span class="keyword">new</span> Man();</span><br><span class="line">man1.name = <span class="string">&quot;小轩同学&quot;</span>;</span><br><span class="line">man1.age = <span class="number">21</span>;</span><br><span class="line">man2.name = <span class="string">&quot;小张同学&quot;</span>;</span><br><span class="line">man2.age = <span class="number">22</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>对象之间的赋值</strong></p>
-<p>各个对象指向堆内存同一个内存空间</p>
-<p>如果在此时更改其中一个对象的属性，另一个对象的相对应的属性也会发生变化，因为这两个对象其实为同一个对象，更改的为同一个“东西”</p>
-<figure class="highlight abnf"><table><tr><td class="code"><pre><span class="line">Man man1 = null<span class="comment">;</span></span><br><span class="line">Man man2 = null<span class="comment">;</span></span><br><span class="line"><span class="attribute">man1</span> = new Man()<span class="comment">;</span></span><br><span class="line">man1.name = <span class="string">&quot;小轩同学&quot;</span><span class="comment">;</span></span><br><span class="line">man1.age = <span class="number">21</span><span class="comment">;</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">man2</span> = man1<span class="comment">;//对象之间的赋值，相同类型才可以赋值</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>如果堆内存的一个空间没有被栈内存所指向，那么虚拟机会认为此堆内存是垃圾内存，会被进行回收</p>
-<hr>
-<h3 id="类与对象小结"><a href="#类与对象小结" class="headerlink" title="类与对象小结"></a>类与对象小结</h3><ol>
-<li>new关键字：表示向内存申请空间，也表示实例化一个对象，创建一个对象。</li>
-<li>一个对象在内存中的大小，由该对象的所有属性所占的内存大小的总和。引用类型变量在32位系统上占4个字节，在64位系统上占8个字节。加上额外的对象隐性数据所占大小。</li>
-<li>相同的类型才可以赋值</li>
-<li>不同的引用，指向同一个对象，任何一个引用改变对象的值，其它引用都会反映出来。</li>
-<li>编程时要注意的问题，在确定不使用对象时，要尽早释放对象：引用 = null;</li>
-<li>当一个堆中的对象没有被任何引用变量所指向时，该对象会被JVM的GC程序认为是垃圾对象，从而被回收。</li>
-</ol>
-<hr>
-]]></content>
-      <categories>
-        <category>JAVA笔记</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-        <tag>面向对象编程语言</tag>
       </tags>
   </entry>
   <entry>
