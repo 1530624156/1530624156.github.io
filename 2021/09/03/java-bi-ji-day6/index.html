@@ -484,7 +484,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4
+                    358
                 </div>
                 
 
@@ -512,6 +512,16 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="JAVA笔记-Day6"><a href="#JAVA笔记-Day6" class="headerlink" title="JAVA笔记-Day6"></a>JAVA笔记-Day6</h1><hr>
+<h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h3><p>在JAVA基础中，this关键字是一个最重要的概念。使用this关键字可以完成以下的操作：</p>
+<ul>
+<li>调用类中的属性</li>
+<li>调用类中的方法或构造方法</li>
+<li>表示当前对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> 	调用类中的属性</span></span><br><span class="line"><span class="comment">    调用类中的方法或构造方法</span></span><br><span class="line"><span class="comment">	表示当前对象:在方法被调用的过程中，哪个对象调用了方法，在方法内的this就表示谁</span></span><br><span class="line"><span class="comment">	类名.this来表示谁的对象：System.out.println(&quot;我是&quot;+Cat.this.getName()+&quot;,我现在&quot;+Cat.this.getAge()+&quot;岁,我爱吃鱼&quot;);</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"><span class="keyword">package</span> D06;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">D06</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		Cat cat = <span class="keyword">new</span> Cat();</span><br><span class="line">		cat.setName(<span class="string">&quot;喵喵&quot;</span>);</span><br><span class="line">		cat.setAge(<span class="number">3</span>);</span><br><span class="line">		cat.eat();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.name = name; 	<span class="comment">//this代表的是当前对象</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.age = age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> age;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">//在方法中使用this调用类中的其他方法或属性，this可以省略，this前面可以使用当前的类名.this</span></span><br><span class="line">		<span class="comment">//在后面的内部类只是中会涉及到</span></span><br><span class="line">		System.out.println(<span class="string">&quot;我是&quot;</span>+<span class="keyword">this</span>.getName()+<span class="string">&quot;,我现在&quot;</span>+<span class="keyword">this</span>.getAge()+<span class="string">&quot;岁,我爱吃鱼&quot;</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//System.out.println(&quot;我是&quot;+this.name+&quot;,我现在&quot;+this.age+&quot;岁,我爱吃鱼&quot;);</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">运行结果：我是喵喵,我现在<span class="number">3</span>岁,我爱吃鱼</span><br></pre></td></tr></table></figure>
+
 
                 
             </div>
@@ -1111,7 +1121,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">33.5k</span>
+                        class="white-color">33.8k</span>
             
             
             
