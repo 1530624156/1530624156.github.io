@@ -152,6 +152,46 @@
       </tags>
   </entry>
   <entry>
+    <title>JAVA笔记day3</title>
+    <url>/2021/08/08/java-bi-ji-day3/</url>
+    <content><![CDATA[<h1 id="JAVA笔记-Day3"><a href="#JAVA笔记-Day3" class="headerlink" title="JAVA笔记-Day3"></a>JAVA笔记-Day3</h1><hr>
+<h2 id="封装性"><a href="#封装性" class="headerlink" title="封装性"></a>封装性</h2><h5 id="一、封装性的概念"><a href="#一、封装性的概念" class="headerlink" title="一、封装性的概念"></a>一、封装性的概念</h5><ol>
+<li><p>封装性是面向对象思想的三大特征之一</p>
+</li>
+<li><p>封装就是隐藏实现细节，仅对外提供访问接口。</p>
+<p>​    封装有：</p>
+</li>
+</ol>
+<p>属性的封装、方法的封装、类的封装、组件的封装、模块化封装、系统级封装…</p>
+<p><em>理解封装的概念可以从生活中的事物来思考，封装起来的东西就是相对独立的整体，比如一个书包，一张桌子，一个冰箱等等，而这些东西组成了一个家。</em></p>
+<h5 id="二、封装的好处"><a href="#二、封装的好处" class="headerlink" title="二、封装的好处"></a>二、封装的好处</h5><ol>
+<li>模块化</li>
+<li>信息隐藏</li>
+<li>代码重查</li>
+<li>插件化易于调试</li>
+<li>具有安全性</li>
+</ol>
+<p><em>封装缺点：会影响执行效率</em></p>
+<p>封装性<br>    如果属性没有封装，那么在本类之外创建对象后，可以直接访问属性<br>    Private关键字：访问权限修饰符。<br>    public 公有的 公有的属性和方法，可以被本类外部的其他类访问<br>    private 私有的，私有的属性或方法，只能在本类中访问</p>
+<p>​    想要在类外部访问私有属性，我们需要提供公有的方法来间接访问<br>​    通常在一个类中，属性都私有化，并对外提供getter and setter方法</p>
+<p><strong>未封装代码</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	封装性</span></span><br><span class="line"><span class="comment">	如果属性没有封装，那么在本类之外创建对象后，可以直接访问属性</span></span><br><span class="line"><span class="comment">	Private关键字：访问权限修饰符。</span></span><br><span class="line"><span class="comment">	public 公有的 公有的属性和方法，可以被本类外部的其他类访问    </span></span><br><span class="line"><span class="comment">	private 私有的，私有的属性或方法，只能在本类中访问</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Day3</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Person p1 = <span class="keyword">new</span> Person();</span><br><span class="line">        p1.name = <span class="string">&quot;小轩同学&quot;</span>;</span><br><span class="line">        p1.age = <span class="number">21</span>;</span><br><span class="line">        System.out.println(p1.name);</span><br><span class="line">        System.out.println(p1.age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//没有封装之前</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="comment">//属性的封装</span></span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>封装后代码</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	想要在类外部访问私有属性，我们需要提供公有的方法来间接访问</span></span><br><span class="line"><span class="comment">	通常在一个类中，属性都私有化，并对外提供getter and setter方法</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Day3</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Person p1 = <span class="keyword">new</span> Person();</span><br><span class="line">        p1.setName(<span class="string">&quot;小轩同学&quot;</span>);</span><br><span class="line">        p1.setAge(<span class="number">21</span>);</span><br><span class="line">        System.out.println(p1.getName());</span><br><span class="line">  		System.out.println(p1.getAge());</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//属性的封装</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//getter and setter写法</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//对外提供一个为name属性设置的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="comment">//this.name中的name指的是p1这个对象的变量name</span></span><br><span class="line">        <span class="comment">//name指的是此方法中的参数name</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//对外提供一个获取name属性的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//此代码运行的结果</span></span><br><span class="line">小轩同学</span><br><span class="line"><span class="number">21</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>JAVA笔记</category>
+      </categories>
+      <tags>
+        <tag>JAVA</tag>
+        <tag>面向对象编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JAVA笔记day4＆day5</title>
     <url>/2021/08/11/java-bi-ji-day4-day5/</url>
     <content><![CDATA[<h1 id="JAVA笔记-Day4-＆-Day5"><a href="#JAVA笔记-Day4-＆-Day5" class="headerlink" title="JAVA笔记-Day4 ＆ Day5"></a>JAVA笔记-Day4 ＆ Day5</h1><hr>
@@ -184,46 +224,6 @@
 <p>​    this,name = name;</p>
 <p>​    this.age = age;</p>
 <p>}</p>
-]]></content>
-      <categories>
-        <category>JAVA笔记</category>
-      </categories>
-      <tags>
-        <tag>JAVA</tag>
-        <tag>面向对象编程语言</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JAVA笔记day3</title>
-    <url>/2021/08/08/java-bi-ji-day3/</url>
-    <content><![CDATA[<h1 id="JAVA笔记-Day3"><a href="#JAVA笔记-Day3" class="headerlink" title="JAVA笔记-Day3"></a>JAVA笔记-Day3</h1><hr>
-<h2 id="封装性"><a href="#封装性" class="headerlink" title="封装性"></a>封装性</h2><h5 id="一、封装性的概念"><a href="#一、封装性的概念" class="headerlink" title="一、封装性的概念"></a>一、封装性的概念</h5><ol>
-<li><p>封装性是面向对象思想的三大特征之一</p>
-</li>
-<li><p>封装就是隐藏实现细节，仅对外提供访问接口。</p>
-<p>​    封装有：</p>
-</li>
-</ol>
-<p>属性的封装、方法的封装、类的封装、组件的封装、模块化封装、系统级封装…</p>
-<p><em>理解封装的概念可以从生活中的事物来思考，封装起来的东西就是相对独立的整体，比如一个书包，一张桌子，一个冰箱等等，而这些东西组成了一个家。</em></p>
-<h5 id="二、封装的好处"><a href="#二、封装的好处" class="headerlink" title="二、封装的好处"></a>二、封装的好处</h5><ol>
-<li>模块化</li>
-<li>信息隐藏</li>
-<li>代码重查</li>
-<li>插件化易于调试</li>
-<li>具有安全性</li>
-</ol>
-<p><em>封装缺点：会影响执行效率</em></p>
-<p>封装性<br>    如果属性没有封装，那么在本类之外创建对象后，可以直接访问属性<br>    Private关键字：访问权限修饰符。<br>    public 公有的 公有的属性和方法，可以被本类外部的其他类访问<br>    private 私有的，私有的属性或方法，只能在本类中访问</p>
-<p>​    想要在类外部访问私有属性，我们需要提供公有的方法来间接访问<br>​    通常在一个类中，属性都私有化，并对外提供getter and setter方法</p>
-<p><strong>未封装代码</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	封装性</span></span><br><span class="line"><span class="comment">	如果属性没有封装，那么在本类之外创建对象后，可以直接访问属性</span></span><br><span class="line"><span class="comment">	Private关键字：访问权限修饰符。</span></span><br><span class="line"><span class="comment">	public 公有的 公有的属性和方法，可以被本类外部的其他类访问    </span></span><br><span class="line"><span class="comment">	private 私有的，私有的属性或方法，只能在本类中访问</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Day3</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Person p1 = <span class="keyword">new</span> Person();</span><br><span class="line">        p1.name = <span class="string">&quot;小轩同学&quot;</span>;</span><br><span class="line">        p1.age = <span class="number">21</span>;</span><br><span class="line">        System.out.println(p1.name);</span><br><span class="line">        System.out.println(p1.age);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//没有封装之前</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="comment">//属性的封装</span></span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>封装后代码</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	想要在类外部访问私有属性，我们需要提供公有的方法来间接访问</span></span><br><span class="line"><span class="comment">	通常在一个类中，属性都私有化，并对外提供getter and setter方法</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Day3</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Person p1 = <span class="keyword">new</span> Person();</span><br><span class="line">        p1.setName(<span class="string">&quot;小轩同学&quot;</span>);</span><br><span class="line">        p1.setAge(<span class="number">21</span>);</span><br><span class="line">        System.out.println(p1.getName());</span><br><span class="line">  		System.out.println(p1.getAge());</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//属性的封装</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//getter and setter写法</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//对外提供一个为name属性设置的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">        <span class="comment">//this.name中的name指的是p1这个对象的变量name</span></span><br><span class="line">        <span class="comment">//name指的是此方法中的参数name</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//对外提供一个获取name属性的方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//此代码运行的结果</span></span><br><span class="line">小轩同学</span><br><span class="line"><span class="number">21</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 ]]></content>
       <categories>
         <category>JAVA笔记</category>
@@ -303,6 +303,24 @@
       </tags>
   </entry>
   <entry>
+    <title>一篇关于博客的自述</title>
+    <url>/2021/08/04/ni-hao-shi-jie/</url>
+    <content><![CDATA[<h2 id="一篇关于博客的自述"><a href="#一篇关于博客的自述" class="headerlink" title="一篇关于博客的自述"></a>一篇关于博客的自述</h2><h4 id="你好-世界"><a href="#你好-世界" class="headerlink" title="你好 世界"></a>你好 世界</h4><p>​    你好 世界，作为本世纪的博客我想我应该做点什么</p>
+<p>​    先来个自我介绍，大家好，我是一名JAVA开发的程序员，这是我人生第一次写博客，之前也曾听说过写博客是程序员最好的成长方式之一，因为各种原因或者说是惰性思想而没有开始，今晚是项目上线的时间，在等待测试验证的时间突然萌生了写博客的想法，那就开始吧。</p>
+<p>​    第一篇呢，就先分享一下自己当程序员的感受吧。就个人而言，我觉得程序员是一个特别需要被认可的行业，希望自己被别人认可，也希望自己的代码被别人认可。每当自己一个字母一个字母亲手敲打出来的代码，实现了某个新的业务功能的时候，当自己的代码实现了功能，又很少出bug或者没有bug的时候，心里总是带有一种成就感和喜悦感的！尤其是自己用了新的思路或者新的办法解决问题的时候，恨不得告诉全世界自己的成长，但是呢，又怕别人说自己太过浮夸，就自己分享这份喜悦吧。所以有人说，程序员是孤独的，嗯，确实是这样。</p>
+<p>​    同时，程序员也是焦虑的，迷茫的。会为了学不到东西，害怕没办法成长而焦虑；又会为了学什么技术，从什么入手而迷茫，如：不知道该先学jvm，还是先学多线程，或者先学设计模式和算法。既然没有人指路，那就自己闯闯呗。学一学自己感兴趣的，或者经常用到的，或者面试经常问到的。</p>
+<p>​    于是，年前买了一门多线程的课，看了几章觉得受益匪浅，越看越起劲，然后过年放假，又因为去年可恶的新冠状病毒而导致的假期延长。已经玩了很久，也放松了很久了。直到上上周新加入一个项目组，开始了一些开发工作，思想才慢慢的被拉回正轨，意识到自己很久没有学习了，发现自己年前看过的知识点已经忘记的七七八八了。写这篇博客的一个目的也是为了促进一下自己的学习，也想试一下写博客，是否真的能让我学到的东西记得更深一些</p>
+<p>​    我也会在博客发表一些关于自己的学习心得，供大家参考，希望大家都能变成自己所目标上的人物，不管是前端也好，后端也罢，总有一款你喜欢的。</p>
+<p>​    大家可以一起学习，一起进步</p>
+]]></content>
+      <categories>
+        <category>文章</category>
+      </categories>
+      <tags>
+        <tag>博客自述</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于自建博客的报告</title>
     <url>/2021/08/05/guan-yu-zi-jian-bo-ke-de-bao-gao/</url>
     <content><![CDATA[<h1 id="关于自建博客的概述"><a href="#关于自建博客的概述" class="headerlink" title="关于自建博客的概述"></a>关于自建博客的概述</h1><hr>
@@ -323,24 +341,6 @@
       </categories>
       <tags>
         <tag>博客来源</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一篇关于博客的自述</title>
-    <url>/2021/08/04/ni-hao-shi-jie/</url>
-    <content><![CDATA[<h2 id="一篇关于博客的自述"><a href="#一篇关于博客的自述" class="headerlink" title="一篇关于博客的自述"></a>一篇关于博客的自述</h2><h4 id="你好-世界"><a href="#你好-世界" class="headerlink" title="你好 世界"></a>你好 世界</h4><p>​    你好 世界，作为本世纪的博客我想我应该做点什么</p>
-<p>​    先来个自我介绍，大家好，我是一名JAVA开发的程序员，这是我人生第一次写博客，之前也曾听说过写博客是程序员最好的成长方式之一，因为各种原因或者说是惰性思想而没有开始，今晚是项目上线的时间，在等待测试验证的时间突然萌生了写博客的想法，那就开始吧。</p>
-<p>​    第一篇呢，就先分享一下自己当程序员的感受吧。就个人而言，我觉得程序员是一个特别需要被认可的行业，希望自己被别人认可，也希望自己的代码被别人认可。每当自己一个字母一个字母亲手敲打出来的代码，实现了某个新的业务功能的时候，当自己的代码实现了功能，又很少出bug或者没有bug的时候，心里总是带有一种成就感和喜悦感的！尤其是自己用了新的思路或者新的办法解决问题的时候，恨不得告诉全世界自己的成长，但是呢，又怕别人说自己太过浮夸，就自己分享这份喜悦吧。所以有人说，程序员是孤独的，嗯，确实是这样。</p>
-<p>​    同时，程序员也是焦虑的，迷茫的。会为了学不到东西，害怕没办法成长而焦虑；又会为了学什么技术，从什么入手而迷茫，如：不知道该先学jvm，还是先学多线程，或者先学设计模式和算法。既然没有人指路，那就自己闯闯呗。学一学自己感兴趣的，或者经常用到的，或者面试经常问到的。</p>
-<p>​    于是，年前买了一门多线程的课，看了几章觉得受益匪浅，越看越起劲，然后过年放假，又因为去年可恶的新冠状病毒而导致的假期延长。已经玩了很久，也放松了很久了。直到上上周新加入一个项目组，开始了一些开发工作，思想才慢慢的被拉回正轨，意识到自己很久没有学习了，发现自己年前看过的知识点已经忘记的七七八八了。写这篇博客的一个目的也是为了促进一下自己的学习，也想试一下写博客，是否真的能让我学到的东西记得更深一些</p>
-<p>​    我也会在博客发表一些关于自己的学习心得，供大家参考，希望大家都能变成自己所目标上的人物，不管是前端也好，后端也罢，总有一款你喜欢的。</p>
-<p>​    大家可以一起学习，一起进步</p>
-]]></content>
-      <categories>
-        <category>文章</category>
-      </categories>
-      <tags>
-        <tag>博客自述</tag>
       </tags>
   </entry>
   <entry>
