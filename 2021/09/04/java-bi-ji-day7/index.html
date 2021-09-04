@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JAVA笔记day2, 小轩同学">
+    <meta name="keywords" content="JAVA笔记Day7, 小轩同学">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JAVA笔记day2 | 小轩同学</title>
+    <title>JAVA笔记Day7 | 小轩同学</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -320,12 +320,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JAVA笔记day2</h1>
+                    <h1 class="description center-align post-title">JAVA笔记Day7</h1>
                 </div>
             </div>
         </div>
@@ -470,28 +470,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-07
+                    2021-09-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-07
+                    2021-09-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    635
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    2 分
                 </div>
                 
 
@@ -511,87 +511,78 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="JAVA笔记-Day2"><a href="#JAVA笔记-Day2" class="headerlink" title="JAVA笔记-Day2"></a>JAVA笔记-Day2</h1><h3 id="昨日回顾"><a href="#昨日回顾" class="headerlink" title="昨日回顾"></a>昨日回顾</h3><hr>
-<h4 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h4><hr>
-<p><strong>什么是类？</strong></p>
-<p>1、类是：分类、类别。</p>
-<p>2、通过分类，我们可以区别不同的事物种类，在日常生活当中，我们常常这样做</p>
-<p>3、所以，类是一组具有相同特性(属性)与行为(方法)的事物集合。</p>
-<p><strong>类与对象的关系</strong></p>
-<p>1、类表示一个共性的产物，是一个综合的特征，而对象，是一个个性的产物，是一个个体的特征。</p>
-<p>2、类由属性和方法组成：</p>
-<ul>
-<li>属性：就相当于一个个的特征</li>
-<li>方法：就相当于人的一个个的行为，Such as：说话、吃饭、唱歌、睡觉</li>
-</ul>
-<p>为了方便理解(类与对象即为包含关系，类包含对象，例如：人类是一个类，然后我、你、李小龙、彭于晏即为对象)</p>
+                <h1 id="JAVA笔记-Day7"><a href="#JAVA笔记-Day7" class="headerlink" title="JAVA笔记-Day7"></a>JAVA笔记-Day7</h1><hr>
+<h3 id="值传递与引用传递"><a href="#值传递与引用传递" class="headerlink" title="值传递与引用传递"></a>值传递与引用传递</h3><hr>
+<p>示例一：值传递</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ValueDemo</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span>  <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		<span class="keyword">int</span> x = <span class="number">10</span>;</span><br><span class="line">		method(x);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(<span class="keyword">int</span> mx)</span></span>&#123;</span><br><span class="line">		mx = <span class="number">20</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">运行之后：x=10，mx由10变为20，但是x的值不发生变化，mx对x没有影响</span><br></pre></td></tr></table></figure>
+
+<p>值传递的本质是传递变量的值</p>
 <hr>
-<h3 id="类和对象的定义格式"><a href="#类和对象的定义格式" class="headerlink" title="类和对象的定义格式"></a>类和对象的定义格式</h3><hr>
-<p>在Java中可以使用以下的语句定义一个类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名称</span>&#123;</span><br><span class="line">	属性名称;</span><br><span class="line">	返回值类型 方法名称()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>示例二：引用传递</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefDemo1</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Duck d = <span class="keyword">new</span> Duck();</span><br><span class="line">        method(d);</span><br><span class="line">        System.out.println(<span class="string">&quot;Duck age = &quot;</span>+d.age);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(Duck duck)</span></span>&#123;</span><br><span class="line">        duck.age = <span class="number">5</span>;</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Duck</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> age = <span class="number">2</span>;<span class="comment">//省略封装</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>对象的定义：</p>
-<p>一个类要想真正的进行操作，则必须依靠对象，对象的定义格式如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类名称 对象名称 = <span class="keyword">new</span> 类名称();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">运行结果：Duck age = <span class="number">5</span></span><br></pre></td></tr></table></figure>
 
-<p>按照以上的格式就可以产生对象了。 </p>
-<p>如果要想访问类中的属性或方法(方法的定义) .</p>
-<p>则可以依靠以下的语法形式：</p>
-<p>访问类中的属性：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对象.属性;</span><br></pre></td></tr></table></figure>
+<p>引用传递的本质是传递内存空间地址，而非值本身。</p>
+<hr>
+<p>示例三：String传递</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//字符串本身就是一个对象</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefDemo2</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		String name = <span class="string">&quot;小轩同学&quot;</span>;</span><br><span class="line">		method(name);</span><br><span class="line">		System.out.println(<span class="string">&quot;name=&quot;</span>+name);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(String sname)</span></span>&#123;</span><br><span class="line">		sname = <span class="string">&quot;小月同学&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>调用类中的方法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对象.方法();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">运行结果：name=小轩同学</span><br></pre></td></tr></table></figure>
 
-<p>在java中对象声明有两种含义：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">声明对象：Man man = <span class="keyword">null</span>;</span><br><span class="line"><span class="comment">//表示声明了一个对象，但是此对象无法使用，man没有具体的内存指向，需要实例化一下也就是通常所说的new一下</span></span><br></pre></td></tr></table></figure>
+<p>解析：因为字符串就是一个对象，所以“小轩同学”和“小月同学”为两个不同的对象，各自占用一个堆内存，程序刚开始时，name与sname都指向“小轩同学”,在执行sname=“小月同学”时，sname所指向的地址发生了变化，但是name指向的地址没有发生变化，所以name=小轩同学</p>
+<hr>
+<p>示例四：String传递</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RefDemo3</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">		Person p = <span class="keyword">new</span> Person();</span><br><span class="line">		method(p);</span><br><span class="line">		System.out.println(<span class="string">&quot;person name = &quot;</span>+p.name);</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(Person per)</span></span>&#123;</span><br><span class="line">        per.name = <span class="string">&quot;小月同学&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    String name = <span class="string">&quot;小轩同学&quot;</span>; 		<span class="comment">//省略封装</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">实例化对象: man = <span class="keyword">new</span> Man();</span><br><span class="line"><span class="comment">//表示实例化了对象，也就是常说的new了一下对象，接下开就可以使用它了</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">运行结果：person name = 小月同学</span><br></pre></td></tr></table></figure>
 
 <hr>
-<p><strong>定义类、定义对象、定义方法、访问对象的属性、调用对象的方法例子：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	此代码编译时会出现两个.class文件</span></span><br><span class="line"><span class="comment">	一个类就是一个.class</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Day2</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Man man = <span class="keyword">null</span>;   <span class="comment">//声明一个类的变量(除了八种基本数据类型以外，都是引用数据类型，包括数组)</span></span><br><span class="line">        <span class="comment">//表示声明了一个对象，但是此对象无法使用，man没有具体的内存指向</span></span><br><span class="line">        man = <span class="keyword">new</span> Man();  <span class="comment">//创建一个Man类型的对象,实例化对象</span></span><br><span class="line">        <span class="comment">//有了对象，就可以调用对象的属性和方法</span></span><br><span class="line">        man.name = <span class="string">&quot;小轩同学&quot;</span>;</span><br><span class="line">        man.age = <span class="number">21</span>;</span><br><span class="line">        </span><br><span class="line">        man.walk(); <span class="comment">//调用walk方法，那么方法就会被执行。</span></span><br><span class="line">        man.code(); <span class="comment">//调用code方法，那么方法就会被执行。</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">//匿名对象：只能使用一次，用完后，该对象就会被释放</span></span><br><span class="line">        <span class="keyword">new</span> Man().code();</span><br><span class="line">        </span><br><span class="line">        man = <span class="keyword">null</span>; <span class="comment">//把对象释放</span></span><br><span class="line">        <span class="comment">//man.code(); //当对象不存在时，调用该对象的属性和方法将报错(空指针)</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//自定义一个类(类型)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Man</span></span>&#123;</span><br><span class="line">    <span class="comment">//在类中定义属性(特征)</span></span><br><span class="line">    String name;	<span class="comment">//字符串是引用类型变量,不是基本数据类型变量</span></span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="comment">//在类中定义方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">walk</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我是&quot;</span>+name+<span class="string">&quot;我&quot;</span>+age+<span class="string">&quot;岁，我能走路&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">code</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我能写代码,尽管写的不好&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>此代码运行之后的结果：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我是小轩同学我<span class="number">21</span>岁，我能走路</span><br><span class="line">我能写代码,尽管写的不好</span><br></pre></td></tr></table></figure>
-
+<h4 id="关于怎么断定值传递与引用传递"><a href="#关于怎么断定值传递与引用传递" class="headerlink" title="关于怎么断定值传递与引用传递"></a>关于怎么断定值传递与引用传递</h4><hr>
+<p>在java中的变量有<u>基本类型变量</u>与<u>引用类型变量</u>，在调用方法时传递基本类型变量即为值传递，传递引用类型变量即为引用传递，java引用类型默认传递指针，在java中只有八种基本数据类型int , float , double , boolean , long , short , char , byte，这八种基本数据类型在引用时都是值传递，String等一些引用数据类型在传递时都是引用传递，基本数据类型也可以进行引用传递，将其包装成引用对象即可，例如int的引用包装对象是Integer,boolean的引用包装对象是Boolean，（开头大写）等等。。。</p>
 <hr>
-<h3 id="对象内存分析"><a href="#对象内存分析" class="headerlink" title="对象内存分析"></a>对象内存分析</h3><hr>
-<p>1、new关键字表示创建一个对象</p>
-<p>2、new关键字表示实例化一个对象</p>
-<p>3、new关键字表示申请内存空间</p>
-<p><em>注意：如果使用一个没有申请内存空间的对象，会报空指针异常</em></p>
-<p><code>java.lang.NullPointerException</code></p>
-<hr>
-<p><strong>对象在内存中的结构：</strong></p>
-<p>Man man = null;</p>
-<p><img src="https://z3.ax1x.com/2021/08/07/fMP7b6.png" alt="fMP7b6.png"></p>
-<p>man = new Man();</p>
-<p><img src="https://z3.ax1x.com/2021/08/07/fMPTDx.png" alt="fMPTDx.png"></p>
-<p><strong>给对象的属性赋值</strong></p>
-<p>man.name = “小轩同学”</p>
-<p>man.age = 21</p>
-<p>则堆内存中的 name = “小轩同学” age = 21</p>
-<p><strong>一个类下创建多个对象</strong></p>
-<p>各个对象指向堆内存各自的内存空间</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Man man1 = <span class="keyword">null</span>;</span><br><span class="line">Man man2 = <span class="keyword">null</span>;</span><br><span class="line">man1 = <span class="keyword">new</span> Man();</span><br><span class="line">man2 = <span class="keyword">new</span> Man();</span><br><span class="line">man1.name = <span class="string">&quot;小轩同学&quot;</span>;</span><br><span class="line">man1.age = <span class="number">21</span>;</span><br><span class="line">man2.name = <span class="string">&quot;小张同学&quot;</span>;</span><br><span class="line">man2.age = <span class="number">22</span>;</span><br></pre></td></tr></table></figure>
-
-<p><strong>对象之间的赋值</strong></p>
-<p>各个对象指向堆内存同一个内存空间</p>
-<p>如果在此时更改其中一个对象的属性，另一个对象的相对应的属性也会发生变化，因为这两个对象其实为同一个对象，更改的为同一个“东西”</p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Man man1 = null<span class="comment">;</span></span><br><span class="line">Man man2 = null<span class="comment">;</span></span><br><span class="line"><span class="attribute">man1</span> = new Man()<span class="comment">;</span></span><br><span class="line">man1.name = <span class="string">&quot;小轩同学&quot;</span><span class="comment">;</span></span><br><span class="line">man1.age = <span class="number">21</span><span class="comment">;</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">man2</span> = man1<span class="comment">;//对象之间的赋值，相同类型才可以赋值</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>如果堆内存的一个空间没有被栈内存所指向，那么虚拟机会认为此堆内存是垃圾内存，会被进行回收</p>
-<hr>
-<h3 id="类与对象小结"><a href="#类与对象小结" class="headerlink" title="类与对象小结"></a>类与对象小结</h3><ol>
-<li>new关键字：表示向内存申请空间，也表示实例化一个对象，创建一个对象。</li>
-<li>一个对象在内存中的大小，由该对象的所有属性所占的内存大小的总和。引用类型变量在32位系统上占4个字节，在64位系统上占8个字节。加上额外的对象隐性数据所占大小。</li>
-<li>相同的类型才可以赋值</li>
-<li>不同的引用，指向同一个对象，任何一个引用改变对象的值，其它引用都会反映出来。</li>
-<li>编程时要注意的问题，在确定不使用对象时，要尽早释放对象：引用 = null;</li>
-<li>当一个堆中的对象没有被任何引用变量所指向时，该对象会被JVM的GC程序认为是垃圾对象，从而被回收。</li>
-</ol>
-<hr>
+<table>
+<thead>
+<tr>
+<th>基本数据类型</th>
+<th>引用包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>char</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+</tbody></table>
 
                 
             </div>
@@ -618,7 +609,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://1530624156.github.io/2021/08/07/java-bi-ji-day2/">http://1530624156.github.io/2021/08/07/java-bi-ji-day2/</a>
+                    <a href="http://1530624156.github.io/2021/09/04/java-bi-ji-day7/">http://1530624156.github.io/2021/09/04/java-bi-ji-day7/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -855,17 +846,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/08/08/java-bi-ji-day3/">
+                <a href="/2021/09/04/java-bi-ji-day7/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="JAVA笔记day3">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="JAVA笔记Day7">
                         
-                        <span class="card-title">JAVA笔记day3</span>
+                        <span class="card-title">JAVA笔记Day7</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -875,9 +867,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -890,6 +882,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -912,13 +905,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/08/06/java-bi-ji-day1/">
+                <a href="/2021/09/03/java-bi-ji-day6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="JAVA笔记day1">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="JAVA笔记day6">
                         
-                        <span class="card-title">JAVA笔记day1</span>
+                        <span class="card-title">JAVA笔记day6</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -929,7 +922,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-03
                             </span>
                         <span class="publish-author">
                             
